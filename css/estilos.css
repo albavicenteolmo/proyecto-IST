@@ -1,0 +1,368 @@
+@font-face {
+    font-family: "DejaVuSansMono";
+    src: url("../fuentes/DejaVuSansMono.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Consolas";
+    src: url("../fuentes/Consolas.ttf") format("truetype");
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Curse";
+    src: url("../fuentes/curs.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "iconn";
+    src: url("../fuentes/heydings_icons.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+section {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+h1 {
+    font-family: DejaVuSansMono;
+}
+
+#botones1 {
+    display: flex;
+    flex-flow: row;
+}
+
+#menun {
+    visibility: hidden;
+}
+
+#menun,
+#reset {
+    margin-top: 5px;
+    border: 1px solid black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12pt;
+    font-family: Consolas;
+    background-color: white;
+    text-align: center;
+    margin-left: 5px;
+}
+
+#menun:hover,
+#reset:hover {
+    background-color: black;
+    color: white;
+}
+
+.bot {
+    height: 30px;
+    width: 30px;
+    display: inline-flex;
+    justify-content: center;
+    margin: 0;
+    background-color: #B0B0B0;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    font-size: 10pt;
+}
+
+.bot:hover {
+    background-color: white;
+}
+
+.botd {
+    height: 30px;
+    width: 30px;
+    display: inline-flex;
+    justify-content: center;
+    margin: 0;
+    background-color: #F5F5F5;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    font-size: 10pt;
+    position: relative;
+    -webkit-transition: all 1000ms;
+    -moz-transition: all 1000ms;
+    -ms-transition: all 1000ms;
+    -o-transition: all 1000ms;
+    transition: all 1000ms;
+}
+
+.botdr {
+    height: 30px;
+    width: 30px;
+    display: inline-flex;
+    justify-content: center;
+    margin: 0;
+    background-color: rgba(255, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    font-size: 10pt;
+    position: relative;
+}
+
+.band {
+    height: 30px;
+    width: 30px;
+    display: inline-flex;
+    justify-content: center;
+    margin: 0;
+    background-color: red;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    font-size: 10pt;
+    position: relative;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+#tmp {
+    display: inline-block;
+}
+
+#tablero {
+    line-height: 0;
+    border: 3px black solid;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+#mmm {
+    margin: 0;
+    font-family: Menlof;
+    margin-bottom: 14px;
+}
+
+.flo {
+    position: absolute;
+    text-align: center;
+    font-weight: bold;
+    right: 11px;
+    top: 3px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    font-family: Verdana;
+}
+
+.flob {
+    position: absolute;
+    text-align: center;
+    font-weight: bold;
+    right: 7px;
+    top: -12px;
+    font-family: Curse;
+    font-size: 20pt;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.floba {
+    position: absolute;
+    text-align: center;
+    font-weight: bold;
+    font-family: iconn;
+    color: white;
+    font-size: 20pt;
+    right: 1px;
+    top: -12px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.flo1 {
+    color: #2262A3;
+}
+
+.flo2 {
+    color: #1BBF33;
+}
+
+.flo3 {
+    color: #FF0000;
+}
+
+.flo4 {
+    color: #120AA6;
+}
+
+.flo5 {
+    color: #A32222;
+}
+
+.flo6 {
+    color: #22A3A3;
+}
+
+.flo7 {
+    color: #A36322;
+}
+
+.bo {
+    background-color: red;
+}
+
+.boa {
+    background-color: blue;
+}
+
+.inv {
+    display: none;
+}
+
+.inv1 {
+    width: 0;
+}
+
+.botones2 {
+    display: flex;
+    flex-flow: row;
+    margin-bottom: 14px;
+}
+
+#ajustes {
+    z-index: -4;
+}
+
+.elebot1 {
+    height: 60px;
+    width: 60px;
+    border: 1px solid rgba(0, 0, 0, 0.9);
+    border-radius: 5px;
+    margin: 5px;
+    color: black;
+}
+
+.elebot2 {
+    height: 60px;
+    width: 60px;
+    border: 1px solid rgba(0, 0, 0, 0.9);
+    border-radius: 5px;
+    margin: 5px;
+    color: white;
+    background-color: black;
+}
+
+#bore2 {
+    font-family: iconn;
+    font-size: 40pt;
+    text-align: center;
+}
+
+.btto {
+    background-color: rgba(0, 0, 0, 0.3);
+    display: inline-flex;
+    font-family: Verdana;
+    font-weight: lighter;
+    color: white;
+    padding: 5px;
+    margin: 0;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.bttod {
+    background-color: rgba(0, 0, 0, 0.7);
+    display: inline-flex;
+    font-family: Verdana;
+    font-weight: lighter;
+    color: white;
+    padding: 5px;
+    margin: 0;
+    -webkit-transition: all 2400ms;
+    -moz-transition: all 2400ms;
+    -ms-transition: all 2400ms;
+    -o-transition: all 2400ms;
+    transition: all 2400ms;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.btto:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.ull {
+    display: flex;
+    list-style: none;
+    flex-flow: column;
+    align-items: center;
+    font-family: Adventures;
+    font-size: 20pt;
+    -webkit-transition: all 2400ms;
+    -moz-transition: all 2400ms;
+    -ms-transition: all 2400ms;
+    -o-transition: all 2400ms;
+    transition: all 2400ms;
+    padding-bottom: 10px;
+}
+
+#ol1,
+#ol2,
+#ol3 {
+    margin-bottom: 0px;
+}
+
+#rnm {
+    display: flex;
+}
+
+#bot1 {
+    border-radius: 10px 0px 0px 0px;
+}
+
+#bot3 {
+    border-radius: 0px 10px 0px 0px;
+}
+
+#botones {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+#cen {
+    display: none;
+}
+
+#b_gris {
+    display: none;
+}
+
+#content_barra_galeon {
+    display: none;
+}
+
+iframe {
+    display: none;
+}
+
+@media (max-width: 500px) {
+    .ayu {
+        -webkit-transition: all 2400ms;
+        -moz-transition: all 2400ms;
+        -ms-transition: all 2400ms;
+        -o-transition: all 2400ms;
+        transition: all 2400ms;
+        width: 100%;
+        height: 100%;
+    }
+    .ayu1 {
+        -webkit-transition: all 2400ms;
+        -moz-transition: all 2400ms;
+        -ms-transition: all 2400ms;
+        -o-transition: all 2400ms;
+        transition: all 2400ms;
+        width: 0;
+        height: 0;
+    }
+    #cen {
+        display: block;
+    }
+}

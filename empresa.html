@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"> 
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="css/menu_fijo.css"/>
+        <link rel="stylesheet" type="text/css" href="css/recursos.css"/>
+        <link rel="stylesheet" type="text/css" href="css/noticias.css"/>
+        <link rel="stylesheet" type="text/css" href="css/empresa.css"/>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+        <link rel="icon" href="imagenes/logos/teleco3.png">
+        <!-- jQuery library -->
+        <script type="text/javascript" src="js/jquery/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery/jquery-ui-1.8.17.custom.min.js"></script>
+        <!-- jsPDF library -->
+        <script type="text/javascript" src="js/jspdf/jspdf.min.js"></script>
+        <script type="text/javascript" src="js/jspdf/jspdf.debug.js"></script>
+
+        <script>
+            function curriculum() {	
+
+                firstName = document.getElementById("firstName").value;
+                lastName = document.getElementById("lastName").value;
+                email = document.getElementById("email").value;
+                telefono = document.getElementById("telefono").value;
+                descripcion = document.getElementById("descripcion").value; // opcional
+                ciudad = document.getElementById("ciudad").value; // opcional
+                pais = document.getElementById("pais").value; // opcional
+                codpostal = document.getElementById("codpostal").value; // opcional
+                educacion = document.getElementById("educacion").value;
+                experiencia = document.getElementById("experiencia").value;
+                idioma = document.getElementById("idioma").value;
+                nivelidioma = document.getElementById("nivelidioma").value;
+                imagen = document.getElementById("imagen").value;
+
+                var doc = new jsPDF();
+                var altura = 30; // +10
+                var ini = 17;
+                var fin = 190;
+
+                doc.setFontSize(22);	
+                doc.text(75, altura, 'Currículum Vitae');
+                doc.setFontSize(16);
+                altura += 25;
+                doc.text(ini, altura, 'Nombre: ' + firstName);
+                altura += 10;
+                doc.text(ini, altura, 'Apellidos: ' + lastName);
+                altura += 10;
+                doc.text(ini, altura, 'Email: ' + email);
+                altura += 10;
+                doc.text(ini, altura, 'Teléfono: ' + telefono);
+                altura += 10;
+
+                if ( descripcion.length > 0 ) {
+                    doc.text(ini, altura, 'Descripción personal: ' + descripcion);
+                    altura += 10;
+                }
+                if ( ciudad.length > 0 ) {
+                    doc.text(ini, altura, 'Ciudad: ' + ciudad);
+                    altura += 10;
+                }
+                if ( pais.length > 0 ) {
+                    doc.text(ini, altura, 'Pais: ' + pais);
+                    altura += 10;
+                }
+                if ( codpostal.length > 0 ) {
+                    doc.text(ini, altura, 'Código Postal: ' + codpostal);
+                    altura += 10;
+                }
+                altura += 20;
+                doc.text(ini, altura, 'Educación: ');
+                altura += 10;
+                doc.text(ini+15, altura, '- ' + educacion);
+                altura += 10;
+
+                doc.text(ini, altura, 'Experiencia: ');
+                altura += 10;
+                doc.text(ini+15, altura, '- ' + experiencia);
+                altura += 10;
+
+                doc.text(ini, altura, 'Idioma: ');
+                altura += 10;
+                doc.text(ini+15, altura, '- ' + idioma);
+                doc.text(ini+35, altura, 'nivel: ' + nivelidioma);
+                altura += 10;
+
+                if ( imagen.length > 0 ) {
+
+                    // cargamos la imagen
+                var img = new Image();
+
+                imagen = document.getElementById("imagen").value;
+                idxDot = imagen.lastIndexOf("fakepath") + 9;
+                nombre_imagen = imagen.substr(idxDot, imagen.length).toLowerCase();
+                img.src = "imagenes/" + nombre_imagen;
+                // img.onload = function () {
+                //     callback(img);
+                // };
+                // Anyadimos la imagen
+                doc.addImage(img, 'JPEG', 140, 40, 50, 50);
+                    
+                }
+
+                doc.save('Curriculum.pdf');
+            }
+       
+        </script>
+
+
+    </head>
+    <body>
+        <header>
+            <span id="site-name">
+                <img src="imagenes/logos/teleco2.png" width="63.24px" height="70px" style="margin-right: 20px">
+                Blog ETSIT UPV
+            </span>
+            <nav> <!-- Aqui estamos iniciando la nueva etiqueta nav -->
+                <ul class="nav">
+                    <li><a href="index.html">Noticias</a></li>
+                    <li><a href="#">Recursos</a>
+                        <ul>
+                            <li><a href="">Grado</a>
+                                <ul>
+                                    <li><a href="grado_primero.html">Primero</a></li>
+                                    <li><a href="grado_segundo.html">Segundo</a></li>
+                                    <li><a href="grado_tercero.html">Tercero</a></li>
+                                    <li><a href="grado_cuarto.html">Cuarto</a></li>
+                                </ul>
+                            </li>   
+                            <li><a href="">Máster</a>
+                                <ul>
+                                    <li><a href="master_primero.html">Primero</a></li>
+                                    <li><a href="master_segundo.html">Segundo</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="biblioteca.html">Biblioteca</a></li>
+                    <li><a href="gimnasio.html">Gimnasio</a></li>
+                    <li><a href="empresa.html">Empresa</a></li>
+                    <li><a href="ocio.html">Ocio</a></li>
+                    <li><a href="aprende.html">Aprende</a></li>
+                </ul>
+            </nav><!-- Aqui estamos cerrando la nueva etiqueta nav -->
+        </header>
+
+        <div class="content">
+
+            <div class="py-5 text-center">
+                <h2>Toda la información que debes saber para hacer prácticas con empresas</h2>
+                <button id = "pdf" class="btn btn-secundary btn-lg" type="submit"><a href="https://www.etsit.upv.es/media/content/category/empresa/DEF_Pr%C3%A1cticas_Externas_2018.pdf">Practicas Externas para Titulaciones de la ETSIT</a></button>
+                <button id = "pdf" class="btn btn-secundary btn-lg" type="submit"><a href="https://www.etsit.upv.es/media/content/category/empresa/INSTRUCCIONES_CONVENIO.pdf">Instrucciones para Cargar un Convenio de Prácticas</a></button> 
+                <h1></h1>
+                <button id = "pdf" class="btn btn-secundary btn-lg" type="submit"><a href="https://wiki.upv.es/confluence/pages/viewpage.action?pageId=93749267">Reconocimiento de Créditos por Experiencia Laboral</a></button>           
+                <button id = "pdf" class="btn btn-secundary btn-lg" type="submit"><a href="https://aplicat.upv.es/dire-app/gesOfertas.xhtml">Ofertas de empleo vigentes</a></button>
+            </div>
+            <!-- <div class="py-5 text-center">
+                <button id = "pdf" class="btn btn-secundary btn-lg" type="submit"><a href="https://aplicat.upv.es/dire-app/gesOfertas.xhtml">Ofertas de empleo vigentes</a></button>
+            </div> -->
+    
+            <div class="py-5 text-center">
+                <h2>Haz tu currículum</h2>
+                <p class="lead">Completa el formulario y genera tu currículum en pdf para entregarlo a las empresas.</p>
+            </div>
+    
+            <div class="py-5 text-center">
+                <form class="needs-validation" novalidate>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="firstName">Nombre</label>
+                            <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                            <div class="invalid-feedback">
+                                Valor de Nombre requerido.
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="lastName">Apellidos</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                            <div class="invalid-feedback">
+                                Valor de Apellidos requerido.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="email">Correo electrónico</label>
+                            <input type="text" class="form-control" id="email" placeholder="you@example.com" value="" required>
+                            <div class="invalid-feedback">
+                                Valor de correo electrónico requerido.
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="telefono">Teléfono</label>
+                            <input type="text" class="form-control" id="telefono" placeholder="666777999" value="" required>
+                            <div class="invalid-feedback">
+                                Valor de teléfono móvil requerido.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-5 mb-3">
+                            <label for="country">Ciudad<span class="text-muted">(Opcional)</span></label>
+                            <!-- <select class="custom-select d-block w-100" id="country">
+                                <option value="">Choose...</option>
+                                <option>United States</option>
+                            </select> -->
+                            <input type="text" class="form-control" id="ciudad" placeholder="">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="state">País<span class="text-muted">(Opcional)</span></label>
+                            <!-- <select class="custom-select d-block w-100" id="state" required>
+                                <option value="">Choose...</option>
+                                <option>California</option>
+                            </select> -->
+                            <input type="text" class="form-control" id="pais" placeholder="">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="zip">C.P.<span class="text-muted">(Opcional)</span></label>
+                            <input type="text" class="form-control" id="codpostal" placeholder="">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="descripcion">Descripción <span class="text-muted">(Opcional)</span></label>
+                        <input type="descripcion" class="form-control" id="descripcion" placeholder="">
+                    </div>
+    
+                    <div class="mb-3">
+                        <label for="educacion">Educación</label>
+                        <input type="text" class="form-control" id="educacion" placeholder="" required>
+                        <div class="invalid-feedback">
+                            Porfavor introduzca sus estudios.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email">Experiencia laboral</label>
+                        <input type="text" class="form-control" id="experiencia" placeholder="" required>
+                        <div class="invalid-feedback">
+                            Porfavor introduzca su experiencia laboral.
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="firstName">Idioma</label>
+                            <input type="text" class="form-control" id="idioma" placeholder="" value="" required>
+                            <div class="invalid-feedback">
+                                Valor de Idiomas requerido.
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="lastName">Nivel de idioma</label>
+                            <input type="text" class="form-control" id="nivelidioma" placeholder="" value="" required>
+                            <div class="invalid-feedback">
+                                Valor de nivel de idiomas requerido.
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="mb-4">
+                    <p class="lead">Inserta una imagen para completar tu currículum <span class="text-muted">(Opcional)</span></p>
+                    <input name = "profile_picture" type="file" id ="imagen" placeholder="" >
+                        
+
+                    <hr class="mb-4">
+                    <button id = "pdf" class="btn btn-secundary btn-lg btn-block" type="submit"><a href="javascript:curriculum()">Descargar currículum</a></button>
+
+                </form>
+            </div>
+
+            <hr class="featurette-divider">
+
+        </div>
+
+        
+            <!-- FOOTER -->
+            <footer class="container">
+                <p class="float-right"><a href="#">Back to top</a></p>
+                <p class="float-left">&copy; 2019-2020 serrano-vicente-rubio-molina &middot; IST &middot; <a href="https://www.upv.es">UPV</a></p>
+            </footer>
+
+    </body>
+</html>

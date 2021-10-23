@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"> 
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="css/menu_fijo.css"/>
+        <link rel="stylesheet" type="text/css" href="css/recursos.css"/>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="css/aprende.css"/>
+        <!-- <link rel="stylesheet" type="text/css" href="css/aprende.css"> -->
+        <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
+        <link rel="icon" href="imagenes/logos/teleco3.png">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src='/socket.io/socket.io.js'></script>
+        <script src="js/aprende.js"></script>
+    </head>
+    <body>
+        <header>
+            <span id="site-name">
+                <img src="imagenes/logos/teleco2.png" width="63.24px" height="70px" style="margin-right: 20px">
+                Blog ETSIT UPV
+            </span>
+            <nav> <!-- Aqui estamos iniciando la nueva etiqueta nav -->
+                <ul class="nav">
+                    <li><a href="index.html">Noticias</a></li>
+                    <li><a href="#">Recursos</a>
+                        <ul>
+                            <li><a href="">Grado</a>
+                                <ul>
+                                    <li><a href="grado_primero.html">Primero</a></li>
+                                    <li><a href="grado_segundo.html">Segundo</a></li>
+                                    <li><a href="grado_tercero.html">Tercero</a></li>
+                                    <li><a href="grado_cuarto.html">Cuarto</a></li>
+                                </ul>
+                            </li>   
+                            <li><a href="">Máster</a>
+                                <ul>
+                                    <li><a href="master_primero.html">Primero</a></li>
+                                    <li><a href="master_segundo.html">Segundo</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="biblioteca.html">Biblioteca</a></li>
+                    <li><a href="gimnasio.htmls">Gimnasio</a></li>
+                    <li><a href="empresa.html">Empresa</a></li>
+                    <li><a href="ocio.html">Ocio</a></li>
+                    <li><a href="aprende.html">Aprende</a></li>
+                </ul>
+            </nav><!-- Aqui estamos cerrando la nueva etiqueta nav -->
+        </header>
+
+        <div class = "content">
+            <div class="py-5 text-center">
+                <p class="lead">Disfruta aprendiendo, escoje el tema que más te guste.</p>
+                <img src="imagenes/implementacion-de-las-TICS-en-educacion.jpg" style="width:350px; height:200px;">
+            </div>
+
+            <div class="py-5 text-center">
+                <button type="button" class="btn btn-outline-secondary button_aprende" id="mates">Mates</button>
+                <button type="button" class="btn btn-outline-secondary button_aprende" id="fisica">Física</button>
+                <button type="button" class="btn btn-outline-secondary button_aprende" id="biologia">Biología</button>
+                <button type="button" class="btn btn-outline-secondary button_aprende" id="mundo">Mundo</a></button>
+                <button type="button" class="btn btn-outline-secondary button_aprende" id="literatura">Literatura</a></button>
+            
+                <p id='fact'></p>
+            </div>
+
+            <!-- </div> -->
+            <hr class="featurette-divider">
+
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="container">
+            <p class="float-right"><a href="#">Back to top</a></p>
+            <p class="float-left">&copy; 2019-2020 serrano-vicente-rubio-molina &middot; IST &middot; <a href="https://www.upv.es">UPV</a></p>
+        </footer>
+
+    </body>
+</html>

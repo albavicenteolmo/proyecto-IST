@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"> 
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="css/menu_fijo.css"/>
+        <link rel="stylesheet" type="text/css" href="css/recursos.css"/>
+        <link rel="stylesheet" type="text/css" href="css/noticias.css"/>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+        <link rel="icon" href="imagenes/logos/teleco3.png">
+    </head>
+    <body>
+        <header>
+            <span id="site-name">
+                <img src="imagenes/logos/teleco2.png" width="63.24px" height="70px" style="margin-right: 20px">
+                Blog ETSIT UPV
+            </span>
+            <nav> <!-- Aqui estamos iniciando la nueva etiqueta nav -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                <ul class="nav navbar-collapse collapse show" id="navbarCollapse">
+                    <li class="nav-item"><a href="index.html">Noticias</a></li>
+                    <li class="nav-item"><a href="#">Recursos</a>
+                        <ul>
+                            <li><a href="">Grado</a>
+                                <ul>
+                                    <li><a href="grado_primero.html">Primero</a></li>
+                                    <li><a href="grado_segundo.html">Segundo</a></li>
+                                    <li><a href="grado_tercero.html">Tercero</a></li>
+                                    <li><a href="grado_cuarto.html">Cuarto</a></li>
+                                </ul>
+                            </li>   
+                            <li><a href="">Máster</a>
+                                <ul>
+                                    <li><a href="master_primero.html">Primero</a></li>
+                                    <li><a href="master_segundo.html">Segundo</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="biblioteca.html">Biblioteca</a></li>
+                    <li class="nav-item"><a href="gimnasio.html">Gimnasio</a></li>
+                    <li class="nav-item"><a href="empresa.html">Empresa</a></li>
+                    <li class="nav-item"><a href="ocio.html">Ocio</a></li>
+                    <li class="nav-item"><a href="aprende.html">Aprende</a></li>
+                </ul>
+            </nav><!-- Aqui estamos cerrando la nueva etiqueta nav -->
+        </header>
+        
+        <div class = "content">
+
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="first-slide" src="imagenes/alumnos.jpg" alt="First slide">
+                        <div class="container">
+                            <div class="carousel-caption text-left">
+                                <h1>Este curso, 1.855 alumnas y alumnos.</h1>
+                                <p>De Australia, Suiza, Canadá, Singapur, Japón... la UPV da la bienvenida a sus estudiantes de intercambio para este segundo cuatrimestre.</p>
+                                <p><a class="btn btn-lg btn-primary" href="http://www.upv.es/noticias-upv/noticia-11803-este-curso-1-8-es.html" role="button">Conoce más</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="second-slide" src="imagenes/presentacion-estudio-upv-nueva-terminal-puerto-de-valencia-min.jpg" alt="Second slide">
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <h1>Con la nueva terminal a pleno funcionamiento.</h1>
+                                <p>Según un estudio de la UPV, el empleo en el Puerto de València superará los 44.000 puestos de trabajo, el 2,2 % de toda la Comunitat Valenciana.</p>
+                                <p><a class="btn btn-lg btn-primary" href="http://www.upv.es/noticias-upv/noticia-11801-con-la-nueva-t-es.html" role="button">Conoce más</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="third-slide" src="imagenes/womentechmakersvalencia20191_Multimedia-ampliada.jpg" alt="Third slide">
+                        <div class="container">
+                            <div class="carousel-caption text-right">
+                                <h1>VLC Tech Women.</h1>
+                                <p>Participa, inscribiéndote previamente, en la jornada de networking contra el problema de género en carreras STEM.</p>
+                                <p><a class="btn btn-lg btn-primary" href="http://www.upv.es/noticias-upv/noticia-11804-vlc-tech-women-es.html" role="button">Conoce más</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+
+            <div class="container marketing">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <img class="rounded-circle" src="imagenes/DO.jpg" alt="Generic placeholder image" width="140" height="140">
+                        <h2>Evita el fraude con las DO</h2>
+                        <p>Un estudio del COMAV-UPV desarrolla el mapa genético más completo del pimiento cultivado en España</p>
+                        <p><a class="btn btn-secondary" href="http://www.upv.es/noticias-upv/noticia-11798-evita-el-fraud-es.html" role="button">Más detalles &raquo;</a></p>
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-lg-4">
+                        <img class="rounded-circle" src="imagenes/exco2.jpg" alt="Generic placeholder image" width="140" height="140">
+                        <h2>EXCO 2020</h2>
+                        <p>La Escuela Técnica Superior de Ingeniería de la Edificación de la Universitat Politècnica de València (ETSIE-UPV) organiza, del lunes 3 al viernes 7 de febrero, la XXXIV edición del Salón Tecnológico de la Construcción EXCO 2020.</p>
+                        <p><a class="btn btn-secondary" href="http://www.upv.es/noticias-upv/noticia-11779-exco-2020-es.html" role="button">Más detalles &raquo;</a></p>
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-lg-4">
+                        <img class="rounded-circle" src="imagenes/CRISPR.jpg" alt="Generic placeholder image" width="140" height="140">
+                        <h2>Edición genética mediante CRISPR</h2>
+                        <p>Lluís Montoliu, doctor en Biología e investigador del CNB, ofrecerá el próximo jueves 6 de febrero, en la UPV, la conferencia "¿Cómo está llegando la edición genética mediante CRISPR a la clínica?"</p>
+                        <p><a class="btn btn-secondary" href="http://www.upv.es/noticias-upv/noticia-11794-edicion-geneti-es.html" role="button">Más detalles &raquo;</a></p>
+                    </div><!-- /.col-lg-4 -->
+                </div><!-- /.row -->
+
+                <hr class="featurette-divider">
+
+                <div class="row featurette">
+                    <div class="col-md-7">
+                        <h2 class="featurette-heading">iPRONICS Programmable Photonics, S.L. <span class="text-muted">Empresa derivada pionera en el campo de las telecomunicaciones a nivel internacional.</span></h2>
+                        <p class="lead">La Universitat Politècnica de València (UPV) ha puesto en marcha iPRONICS Programmable Photonics, S.L., una spin off -empresa derivada- pionera en el campo de las telecomunicaciones a nivel internacional.</p>
+                        <p><a class="btn btn-secondary" href="https://www.etsit.upv.es/noticia/494/ipronics.html" role="button">Ir a la noticia &raquo;</a></p>
+                    </div>
+                    <div class="col-md-5">
+                        <img class="featurette-image img-fluid mx-auto" src="imagenes/slider_ipronics.jpg" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+                    </div>
+                </div>
+
+                <hr class="featurette-divider">
+
+                <div class="row featurette">
+                    <div class="col-md-7 order-md-2">
+                        <h2 class="featurette-heading">INNOSID <span class="text-muted">TelecomVLC colabora en un entorno internacional.</span></h2>
+                        <p class="lead">El pasado 4 de diciembre de 2019, en la Facultad de Ingeniería Eléctrica y Computación de la Universidad de Zagreb (Croacia), tuvo lugar la primera reunión del proyecto europeo “Innovative Solutions based on Emerging Technologies for Improving Social Inclusion of People with Disabilities” (INNOSID) cuyo objetivo principal es establecer un programa de estudio intensivo multidisciplinar y transnacional en el campo del emprendimiento basado en las TIC, ayudando a aumentar de estas forma la conciencia pública e institucional sobre las necesidades y capacidades de las personas con diversidad funcional./p>
+                        <p><a class="btn btn-secondary" href="https://www.etsit.upv.es/noticia/495/innosid.html" role="button">Ir a la noticia &raquo;</a></p>
+                    </div>
+                    <div class="col-md-5 order-md-1">
+                        <img class="featurette-image img-fluid mx-auto" src="imagenes/slider_innocid.jfif" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+                    </div>
+                </div>
+
+                <hr class="featurette-divider">
+
+                <div class="row featurette">
+                    <div class="col-md-7">
+                        <h2 class="featurette-heading">Telecochips <span class="text-muted">De nuevo en TelecomVLC.</span></h2>
+                        <p class="lead">Como viene siendo habitual por estas fechas el Museo de la Telecomunicación de la ETSIT organiza las Telecochips. Esta actividad consiste en una serie de talleres que se celebrarán los días 16, 17 y 20 de diciembre de 2019. </p>
+                        <p><a class="btn btn-secondary" href="https://www.etsit.upv.es/noticia/491/telecochips.html" role="button">Ir a la noticia &raquo;</a></p>
+                    </div>
+                    <div class="col-md-5">
+                        <img class="featurette-image img-fluid mx-auto" src="imagenes/telecochips_portada.jfif" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+                    </div>
+                </div>
+                
+            </div>
+            <!-- </div> -->
+            <hr class="featurette-divider">
+            <!-- FOOTER -->
+            <footer class="container">
+                <p class="float-right"><a href="#">Back to top</a></p>
+                <p class="float-left">&copy; 2019-2020 serrano-vicente-rubio-molina &middot; IST &middot; <a href="https://www.upv.es">UPV</a></p>
+            </footer>
+    </div>
+
+    <!-- <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide"> -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="assets/js/vendor/popper.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="assets/js/vendor/holder.min.js"></script>
+    </body>
+</html>

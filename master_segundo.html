@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"> 
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="css/menu_fijo.css"/>
+        <link rel="stylesheet" type="text/css" href="css/recursos.css"/>
+        <link rel="stylesheet" type="text/css" href="css/noticias.css"/>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+        <link rel="icon" href="imagenes/logos/teleco3.png">
+    </head>
+    <body>
+        <header>
+            <span id="site-name">
+                <img src="imagenes/logos/teleco2.png" width="63.24px" height="70px" style="margin-right: 20px">
+                Blog ETSIT UPV
+            </span>
+            <nav> <!-- Aqui estamos iniciando la nueva etiqueta nav -->
+                <ul class="nav">
+                    <li><a href="index.html">Noticias</a></li>
+                    <li><a href="">Recursos</a>
+                        <ul>
+                            <li><a href="">Grado</a>
+                                <ul>
+                                    <li><a href="grado_primero.html">Primero</a></li>
+                                    <li><a href="grado_segundo.html">Segundo</a></li>
+                                    <li><a href="grado_tercero.html">Tercero</a></li>
+                                    <li><a href="grado_cuarto.html">Cuarto</a></li>
+                                </ul>
+                            </li>   
+                            <li><a href="">Máster</a>
+                                <ul>
+                                    <li><a href="master_primero.html">Primero</a></li>
+                                    <li><a href="master_segundo.html">Segundo</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="biblioteca.html">Biblioteca</a></li>
+                    <li><a href="gimnasio.html">Gimnasio</a></li>
+                    <li><a href="empresa.html">Empresa</a></li>
+                    <li><a href="ocio.html">Ocio</a></li>
+                    <li><a href="aprende.html">Aprende</a></li>
+                </ul>
+            </nav><!-- Aqui estamos cerrando la nueva etiqueta nav -->
+        </header>
+        <div class="content">
+            <!-- <div class = "izquierda">
+                
+            </div> -->
+            <h1>Lista de Asignaturas</h1>
+            <div class="lista_asignaturas">
+                <ul>
+                    <li><button onclick="expandir('IRST')" class = "nivel1 btn btn-outline-secondary">Implantación de redes y servicios de telecomunicación</button>
+                        <ul style = "display: none"; id = "IRST">
+                            <li><button onclick="expandir('descr_IRST')" class = "nivel2 btn btn-outline-secondary">Descripción</button>
+                                <p class = "IRST p_asignatura" style = "display: none"; id = "descr_IRST">El temario de la asignatura contendrá los contenidos necesarios para que el alumno adquiera las siguientes competencias:<br>
+
+                                    - Capacidad para modelar, diseñar, implantar, gestionar, operar, administrar y mantener redes, servicios y contenidos.<br>
+                                    
+                                    - Capacidad para realizar la planificación, toma de decisiones y empaquetamiento de redes, servicios y aplicaciones considerando la calidad de servicio, los costes directos y de operación, el plan de implantación, supervisión, los procedimientos de seguridad, el escalado y el mantenimiento, así como gestionar y asegurar la calidad en el proceso de desarrollo.<br>
+                                    
+                                    - Capacidad de gestionar proyectos de implantación de redes y servicios innovadores<br>
+                                    
+                                    - Capacidad de aplicar estándares internacionales en la implantación de redes y servicios.</li>
+                            <li><button onclick="expandir('prof_IRST')" class = "nivel2 btn btn-outline-secondary">Profesores</button>
+                                <ul style = "display: none"; id = "prof_IRST" class = "IRST">
+                                    <li><a href="mailto:oromero @ dcom.upv.es>">Romero Martínez, José Oscar</a></li>
+                                </ul>
+                            </li>
+                            <li><button onclick="expandir('bib_IRST')" class = "nivel2 btn btn-outline-secondary">Bibliografía</button>
+                                <ul class = "IRST" style = "display: none"; id = "bib_IRST">
+                                    -
+                                </ul>
+                            </li>
+                            <li><button onclick="expandir('ap_IRST')" class = "nivel2 btn btn-outline-secondary">Apuntes</button>
+                                <ul style = "display: none"; id = "ap_IRST" class = "IRST">
+                                    
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><button onclick="expandir('ITSIT')" class = "nivel1 btn btn-outline-secondary">Integración de tecnologías y sistemas en ingeniería de telecomunicación</button>
+                        <ul style = "display: none"; id="ITSIT">
+                            <li><button onclick="expandir('descr_ITSIT')" class = "nivel2 btn btn-outline-secondary">Descripción</button>
+                                <p class = "ITSIT p_asignatura" style = "display: none"; id = "descr_ITSIT">In this course, students learn to design, deploy, coordinate and manage a Project of Telecommunications Engineering or Electronic Product .
+                                    In order to complement such Projects, several seminars about Information Systems and Business Information Management are taught where a business perspective is provided, focusing on understanding what it means to be part of business information management in an organization.
+                                    Additionally, a number of telecommunication and electronic companies present their business plan and recruitment policy in a scheduled week.</li>
+                            <li><button onclick="expandir('prof_ITSIT')" class = "nivel2 btn btn-outline-secondary">Profesores</button>
+                                <ul style = "display: none"; id = "prof_ITSIT" class = "ITSIT">
+                                    <li><a href="mailto:fballest @ eln.upv.es>">Ballester Merelo, Francisco José</a></li>
+                                    <li><a href="mailto:hgil @ ai2.upv.es>">Gil Gómez, Hermenegildo</a></li>
+                                </ul>
+                            </li>
+                            <li><button onclick="expandir('bib_ITSIT')" class = "nivel2 btn btn-outline-secondary">Bibliografía</button>
+                                <ul style = "display: none"; id = "bib_ITSIT" class = "ITSIT">
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990004184670203706&vid=bibupv">Normativa de infraestructuras comunes de telecomunicaciones : infraestructuras de acceso ultrarrápidas y hogar digital : Real Decreto 346/2011. Nuevo Reglamento de ICT  (Huidobro Moya, José Manuel | Pastor Lozano, Pedro)</a></li>
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990001262520203706&vid=bibupv">Sistemas para la recepción de TV analógica y digital  (Fernández Carnero, José Luis | Lois Santos, Ramón María)</a></li>
+                                </ul>
+                            </li>
+                            <li><button onclick="expandir('ap_ITSIT')" class = "nivel2 btn btn-outline-secondary">Apuntes</li></button>
+                        </ul>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- <div class = "derecha">
+                Derecha
+            </div> -->
+        </div>
+
+        <script>
+            function expandir(identificador){
+                var elem = document.getElementById(identificador);
+                console.log(elem);
+                if (elem.style.display === "none") {
+                    console.log("1");
+                    elem.style.display = "block";
+                } else {
+                    console.log("2");
+                    elem.style.display = "none";
+                    // Tenemos que esconder también todo el contenido de los apartados interiores
+                    var elem_clases = document.getElementsByClassName(identificador);
+                    for (let i of elem_clases){
+                        i.style.display = "none";
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,609 @@
+<!-- Título principal -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/solitario.css">
+
+<h1 id="titulo">Juego del solitario</h1>
+
+
+<!-- Siguiente línea donde se indicará el tiempo transcurrido y la cantidad
+				de movimientos que se han hecho hasta el momento. Estos números se 
+				indicarán en los span internos -->
+<h2 id="marcadores">
+    <span>Tiempo: <span id="cont_tiempo"></span></span>
+    <span style="display:inline-block; width:200px"></span>
+    <span>Movimientos: <span id="cont_movimientos" class=""></span></span>
+</h2>
+
+
+<!-- La "mesa" contendrá los 6 tapetes. En la parte superior dos de ellos 
+				y en la parte inferior los cuatro restantes. Los contadores de los
+				mazos de cartas de cada tapete están indicados oportunamente dentro
+				de elementos span -->
+<div id="mesa">
+    <div class="tapetes_superiores">
+        <div id="inicial" class="tapete">
+            <span id="cont_inicial" class="contador">
+					</span>
+        </div>
+        <div id="sobrantes" class="tapete"><span id="cont_sobrantes" class="contador"></span></div>
+    </div>
+    <div id="receptor1" class="tapete receptor"><span id="cont_receptor1" class="contador"></span></div>
+    <div id="receptor2" class="tapete receptor"><span id="cont_receptor2" class="contador"></span></div>
+    <div id="receptor3" class="tapete receptor"><span id="cont_receptor3" class="contador"></span></div>
+    <div id="receptor4" class="tapete receptor"><span id="cont_receptor4" class="contador"></span></div>
+</div>
+
+<!-- Botón de reset que reinicia todo: partida, contadores de tiempo, de movimientos, ... -->
+<!-- !!!!!!!!!!!!!!!! Convendría elegir un boton de BootStrap, por ejemplo el "danger"... -->
+<button id="reset">Reiniciar</button>
+
+
+</div>
+<!-- class="central" -->
+
+
+
+<script>
+    /***** INICIO DECLARACIÓN DE VARIABLES GLOBALES *****/
+    // Array de palos
+    let palos = ["corazones", "picas", "rombos", "treboles"];
+    // Array de número de cartas
+    //numeros = ["as", 2, 3, 4, 5, 6, 7, 8, 9, 10, "jota", "reina", "rey"];
+    // En las pruebas iniciales solo se trabará con cuatro cartas por palo:
+    //let numeros = [10, "jota", "reina", "rey"];
+    let numeros = ["as", 2, 3, 4, 5, 6, 7, 8, 9, 10, "jota", "reina", "rey"];
+
+    // paso (top y left) en pixeles de una carta a la siguiente en un mazo
+    let paso = 3;
+
+    // Tapetes				
+    let tapete_inicial = document.getElementById("inicial");
+    let tapete_sobrantes = document.getElementById("sobrantes");
+    let tapete_receptor1 = document.getElementById("receptor1");
+    let tapete_receptor2 = document.getElementById("receptor2");
+    let tapete_receptor3 = document.getElementById("receptor3");
+    let tapete_receptor4 = document.getElementById("receptor4");
+
+    // Mazos
+    let mazo_inicial = [];
+    let mazo_sobrantes = [];
+    let mazo_receptor1 = [];
+    let mazo_receptor2 = [];
+    let mazo_receptor3 = [];
+    let mazo_receptor4 = [];
+
+    // Contadores de cartas
+    let cont_inicial = document.getElementById("cont_inicial");
+    let cont_sobrantes = document.getElementById("cont_sobrantes");
+    let cont_receptor1 = document.getElementById("cont_receptor1");
+    let cont_receptor2 = document.getElementById("cont_receptor2");
+    let cont_receptor3 = document.getElementById("cont_receptor3");
+    let cont_receptor4 = document.getElementById("cont_receptor4");
+    let cont_movimientos = document.getElementById("cont_movimientos");
+
+    // Tiempo
+    let cont_tiempo = document.getElementById("cont_tiempo"); // span cuenta tiempo
+    let segundos = 0; // cuenta de segundos
+    let temporizador = null; // manejador del temporizador
+
+    /***** FIN DECLARACIÓN DE VARIABLES GLOBALES *****/
+
+
+    // Rutina asociada a boton reset: comenzar_juego
+    document.getElementById("reset").onclick = comenzar_juego;
+
+    // El juego arranca ya al cargar la página: no se espera a reiniciar
+    /*** !!!!!!!!!!!!!!!!!!! CODIGO !!!!!!!!!!!!!!!!!!!! **/
+    comenzar_juego();
+
+
+    // Desarrollo del comienzo de juego
+    function comenzar_juego() {
+
+        /* Crear baraja, es decir crear el mazo_inicial. Este será un array cuyos 
+        elementos serán elementos HTML <img>, siendo cada uno de ellos una carta.
+        Sugerencia: en dos bucles for, bárranse los "palos" y los "numeros", formando
+        oportunamente el nombre del fichero png que contiene a la carta (recuérdese poner
+        el path correcto en la URL asociada al atributo src de <img>). Una vez creado
+        el elemento img, inclúyase como elemento del array mazo_inicial. 
+        */
+
+        /*** !!!!!!!!!!!!!!!!!!! CODIGO !!!!!!!!!!!!!!!!!!!! **/
+        reset_variables();
+        inicializa_mazo(mazo_inicial);
+
+        // Barajar
+        barajar(mazo_inicial);
+        carta = set_draggable(mazo_inicial);
+        set_carta_drag_funcs(carta);
+        // Dejar mazo_inicial en tapete inicial
+        cargar_tapete_inicial(mazo_inicial);
+
+        // Puesta a cero de contadores de mazos
+        //set_contador(cont_inicial, 0);
+        set_contador(cont_sobrantes, 0);
+        set_contador(cont_receptor1, 0);
+        set_contador(cont_receptor2, 0);
+        set_contador(cont_receptor3, 0);
+        set_contador(cont_receptor4, 0);
+        set_contador(cont_movimientos, 0);
+
+        // Draggable funcs para tapetes
+        set_taps_drag_funcs(tapete_receptor1);
+        set_taps_drag_funcs(tapete_receptor2);
+        set_taps_drag_funcs(tapete_receptor3);
+        set_taps_drag_funcs(tapete_receptor4);
+        set_taps_drag_funcs(tapete_sobrantes);
+
+        // Arrancar el conteo de tiempo
+        arrancar_tiempo();
+
+    } // comenzar_juego
+
+
+
+
+
+
+    /**
+    	Se debe encargar de arrancar el temporizador: cada 1000 ms se
+    	debe ejecutar una función que a partir de la cuenta autoincrementada
+    	de los segundos (segundos totales) visualice el tiempo oportunamente con el 
+    	format hh:mm:ss en el contador adecuado.
+
+    	Para descomponer los segundos en horas, minutos y segundos pueden emplearse
+    	las siguientes igualdades:
+
+    	segundos = truncar (   segundos_totales % (60)                 )
+    	minutos  = truncar ( ( segundos_totales % (60*60) )     / 60   )
+    	horas    = truncar ( ( segundos_totales % (60*60*24)) ) / 3600 )
+
+    	donde % denota la operación módulo (resto de la división entre los operadores)
+
+    	Así, por ejemplo, si la cuenta de segundos totales es de 134 s, entonces será:
+    	   00:02:14
+
+    	Como existe la posibilidad de "resetear" el juego en cualquier momento, hay que 
+    	evitar que exista más de un temporizador simultáneo, por lo que debería guardarse
+    	el resultado de la llamada a setInterval en alguna variable para llamar oportunamente
+    	a clearInterval en su caso.   
+    */
+    function arrancar_tiempo() {
+        if (temporizador) clearInterval(temporizador);
+        let hms = function() {
+            let seg = Math.trunc(segundos % 60);
+            let min = Math.trunc((segundos % 3600) / 60);
+            let hor = Math.trunc((segundos % 86400) / 3600);
+            let tiempo = ((hor < 10) ? "0" + hor : "" + hor) +
+                ":" + ((min < 10) ? "0" + min : "" + min) +
+                ":" + ((seg < 10) ? "0" + seg : "" + seg);
+            set_contador(cont_tiempo, tiempo);
+            segundos++;
+        }
+        segundos = 0;
+        hms(); // Primera visualización 00:00:00
+        temporizador = setInterval(hms, 1000);
+
+    } // arrancar_tiempo
+    /**
+    	Si mazo es un array de elementos <img>, en esta rutina debe ser
+    	reordenado aleatoriamente. Al ser un array un objeto, se pasa
+    	por referencia, de modo que si se altera el orden de dicho array
+    	dentro de la rutina, esto aparecerá reflejado fuera de la misma.
+    	Para reordenar el array puede emplearse el siguiente pseudo código:
+
+    	- Recorramos con i todos los elementos del array
+    		- Sea j un indice cuyo valor sea un número aleatorio comprendido 
+    			entre 0 y la longitud del array menos uno. Este valor aleatorio
+    			puede conseguirse, por ejemplo con la instrucción JavaScript
+    				Math.floor( Math.random() * LONGITUD_DEL_ARRAY );
+    		- Se intercambia el contenido de la posición i-ésima con el de la j-ésima
+
+    */
+    function reset_variables() {
+        mazo_inicial.length = 0;
+        mazo_sobrantes.length = 0;
+        mazo_receptor1.length = 0;
+        mazo_receptor2.length = 0;
+        mazo_receptor3.length = 0;
+        mazo_receptor4.length = 0;
+
+        set_contador(cont_inicial, 0);
+        while (tapete_inicial.firstChild) {
+            if (tapete_inicial.firstChild.className == 'contador') {
+                aux = tapete_inicial.firstChild;
+            }
+            tapete_inicial.removeChild(tapete_inicial.firstChild);
+        }
+        tapete_inicial.appendChild(aux);
+
+        while (tapete_receptor1.firstChild) {
+            if (tapete_receptor1.firstChild.className == 'contador') {
+                aux = tapete_receptor1.firstChild;
+            }
+            tapete_receptor1.removeChild(tapete_receptor1.firstChild);
+        }
+        tapete_receptor1.appendChild(aux);
+
+        while (tapete_receptor2.firstChild) {
+            if (tapete_receptor2.firstChild.className == 'contador') {
+                aux = tapete_receptor2.firstChild;
+            }
+            tapete_receptor2.removeChild(tapete_receptor2.firstChild);
+        }
+        tapete_receptor2.appendChild(aux);
+
+        while (tapete_receptor3.firstChild) {
+            if (tapete_receptor3.firstChild.className == 'contador') {
+                aux = tapete_receptor3.firstChild;
+            }
+            tapete_receptor3.removeChild(tapete_receptor3.firstChild);
+        }
+        tapete_receptor3.appendChild(aux);
+
+        while (tapete_receptor4.firstChild) {
+            if (tapete_receptor4.firstChild.className == 'contador') {
+                aux = tapete_receptor4.firstChild;
+            }
+            tapete_receptor4.removeChild(tapete_receptor4.firstChild);
+        }
+        tapete_receptor4.appendChild(aux);
+
+        while (tapete_sobrantes.firstChild) {
+            if (tapete_sobrantes.firstChild.className == 'contador') {
+                aux = tapete_sobrantes.firstChild;
+            }
+            tapete_sobrantes.removeChild(tapete_sobrantes.firstChild);
+        }
+        tapete_sobrantes.appendChild(aux);
+    }
+
+    function inicializa_mazo(mazo) {
+        numeros.forEach(number => {
+            palos.forEach(palo => {
+                var img = document.createElement('img');
+                img.src = "imagenes/baraja/" + number + "-" + palo + ".png";
+                img.id = number + "-" + palo;
+                img.className = "carta";
+                img.position = 0;
+                img.setAttribute("data-palo", palo);
+                img.setAttribute("data-numero", number);
+                mazo.push(img);
+            });
+        });
+    }
+
+    function barajar(mazo) {
+        let input = mazo;
+
+        for (let i = input.length - 1; i >= 0; i--) {
+
+            let randomIndex = Math.floor(Math.random() * (i + 1));
+            let itemAtIndex = input[randomIndex];
+
+            input[randomIndex] = input[i];
+            input[i] = itemAtIndex;
+        }
+        mazo = input;
+    } // barajar
+
+    /**
+     	En el elemento HTML que representa el tapete inicial (variable tapete_inicial)
+    	se deben añadir como hijos todos los elementos <img> del array mazo.
+    	Antes de añadirlos, se deberían fijar propiedades como la anchura, la posición,
+    	coordenadas top y left, algun atributo de tipo data-...
+    	Al final se debe ajustar el contador de cartas a la cantidad oportuna
+    */
+    function cargar_tapete_inicial(mazo) {
+        mazo.forEach(img => {
+            tapete_inicial.appendChild(img);
+            img.position = parseInt(cont_inicial.innerHTML);
+            inc_contador(cont_inicial);
+            document.getElementById(img.id).style.setProperty('top', 0 + (3 * img.position) + 'px');
+            document.getElementById(img.id).style.setProperty('left', 0 + (3 * img.position) + 'px');
+        });
+    } // cargar_tapete_inicial
+
+
+    /**
+     	Esta función debe incrementar el número correspondiente al contenido textual
+       	del elemento que actúa de contador
+    */
+    function inc_contador(contador) {
+        contador.innerHTML = parseInt(contador.innerHTML) + 1;
+        //set_contador(contador, parseInt(contador.innerHTML));
+    } // inc_contador
+
+    function dec_contador(contador) {
+        contador.innerHTML = parseInt(contador.innerHTML) - 1;
+        //set_contador(contador, parseInt(contador.innerHTML));
+    } // inc_contador
+
+    /**
+    	Similar a las anteriores, pero ajustando la cuenta al
+    	valor especificado
+    */
+    function set_contador(contador, valor) {
+        contador.innerHTML = valor;
+        /*** !!!!!!!!!!!!!!!!!!! CODIGO !!!!!!!!!!!!!!!!!!!! **/
+    } // set_contador
+
+    function set_draggable(mazo) {
+        mazo[mazo.length - 1].setAttribute('draggable', true);
+        return mazo[mazo.length - 1]
+    }
+
+    function unset_draggable(carta) {
+        carta.setAttribute('draggable', false);
+    }
+
+    function set_taps_drag_funcs(tapete) {
+
+        tapete.ondragenter = function(e) {
+            e.preventDefault();
+        }
+
+        tapete.ondragover = function(e) {
+            e.preventDefault();
+        }
+
+        tapete.ondragleave = function(e) {
+            e.preventDefault();
+        }
+
+        tapete.ondrop = function(e) {
+            e.preventDefault();
+            carta_id = e.dataTransfer.getData("text");
+            carta = document.getElementById(carta_id);
+            validMove = check_valid_move(this.id, carta);
+            //validMove = true; //for debugging, accepts all moves
+            if (validMove == true) {
+                carta.style.top = "50%";
+                carta.style.left = "50%";
+                carta.style.transform = "translate(-50%, -50%)";
+                if (this.id != 'sobrantes') {
+                    unset_draggable(carta);
+                }
+
+                dec_contador(carta.parentElement.firstChild);
+                tapete_padre = carta.parentElement;
+                this.appendChild(carta);
+                if (this.id == 'sobrantes') {
+                    mazo_sobrantes.push(carta);
+                } else if (this.id == 'receptor1') {
+                    mazo_receptor1.push(carta);
+                } else if (this.id == 'receptor2') {
+                    mazo_receptor2.push(carta);
+                } else if (this.id == 'receptor3') {
+                    mazo_receptor3.push(carta);
+                } else if (this.id == 'receptor4') {
+                    mazo_receptor4.push(carta);
+                }
+
+                if (tapete_padre.id == 'inicial') {
+                    if (mazo_inicial.length > 0) {
+                        mazo_inicial.pop();
+                        if (mazo_inicial.length > 0) {
+                            set_draggable(mazo_inicial);
+                            set_carta_drag_funcs(mazo_inicial[mazo_inicial.length - 1]);
+                        }
+                    }
+                } else {
+                    if (mazo_sobrantes.length > 0) {
+                        mazo_sobrantes.pop();
+                        if (mazo_sobrantes.length > 0) {
+                            set_draggable(mazo_sobrantes);
+                            set_carta_drag_funcs(mazo_sobrantes[mazo_sobrantes.length - 1]);
+                        }
+                    }
+                }
+
+                inc_contador(cont_movimientos);
+                inc_contador(this.firstChild);
+                if (mazo_inicial.length == 0 && mazo_sobrantes.length > 0) {
+                    swap_cards();
+                } else {
+                    if (mazo_inicial.length == 0 && mazo_sobrantes.length == 0) {
+                        juego_terminado();
+                    }
+                }
+
+            }
+        }
+    }
+
+    function set_carta_drag_funcs(carta) {
+
+        carta.ondragstart = function(e) {
+            e.target.classList.add("arrastrando");
+            e.dataTransfer.setData("text/plain" /* MIME */ , e.target.id);
+        }
+        carta.ondrag = function(e) {
+
+        }
+        carta.ondragend = function(e) {
+            e.target.classList.remove("arrastrando");
+        }
+    }
+
+    function swap_cards() {
+        barajar(mazo_sobrantes);
+        mazo_inicial.push(...mazo_sobrantes);
+        mazo_sobrantes.length = 0;
+        set_contador(cont_sobrantes, 0);
+        set_undraggable_swap(mazo_inicial);
+        carta = set_draggable(mazo_inicial);
+        set_carta_drag_funcs(carta);
+        cargar_tapete(mazo_inicial);
+    }
+
+    function cargar_tapete(mazo) {
+        mazo.forEach(img => {
+            tapete_inicial.appendChild(img);
+            img.position = parseInt(cont_inicial.innerHTML);
+            inc_contador(cont_inicial);
+            document.getElementById(img.id).style.setProperty('top', 42.5 + (3 * img.position) + 'px');
+            document.getElementById(img.id).style.setProperty('left', 30.5 + (3 * img.position) + 'px');
+        });
+    }
+
+    function set_undraggable_swap(mazo) {
+        mazo.forEach(img => {
+            img.setAttribute('draggable', false);
+            img.position = 0;
+            img.style.removeProperty('top');
+            img.style.removeProperty('left');
+
+        });
+    }
+
+    function check_valid_move(tapete, carta) {
+        if (tapete == 'sobrantes') {
+            return true;
+        } else if (tapete == 'inicial') {
+            return false;
+        } else {
+            if (tapete == 'receptor1') {
+                return check_mazo(mazo_receptor1, carta);
+            } else if (tapete == 'receptor2') {
+                return check_mazo(mazo_receptor2, carta);
+            } else if (tapete == 'receptor3') {
+                return check_mazo(mazo_receptor3, carta);
+            } else if (tapete == 'receptor4') {
+                return check_mazo(mazo_receptor4, carta);
+            }
+        }
+    }
+
+    function check_mazo(mazo, carta) {
+        if (mazo.length == 0) {
+            if (carta.getAttribute('data-numero') == 'rey') {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            palo = mazo[mazo.length - 1].getAttribute('data-palo');
+            if (palo == 'treboles' || palo == 'picas') {
+                palos_aceptados = ['corazones', 'rombos'];
+            } else if (palo == 'corazones' || palo == 'rombos') {
+                palos_aceptados = ['treboles', 'picas'];
+            }
+            switch (mazo[mazo.length - 1].getAttribute('data-numero')) {
+                case 'rey':
+                    if (carta.getAttribute('data-numero') == 'reina' && palos_aceptados.indexOf(carta.getAttribute('data-palo')) > -1) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+
+                    break;
+
+                case 'reina':
+                    if (carta.getAttribute('data-numero') == 'jota' && palos_aceptados.indexOf(carta.getAttribute('data-palo')) > -1) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                    break;
+
+                case 'jota':
+                    if (carta.getAttribute('data-numero') == '10' && palos_aceptados.indexOf(carta.getAttribute('data-palo')) > -1) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                    break;
+
+                case '10':
+                    if (carta.getAttribute('data-numero') == '9' && palos_aceptados.indexOf(carta.getAttribute('data-palo')) > -1) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                    break;
+
+                case '9':
+                    if (carta.getAttribute('data-numero') == '8' && palos_aceptados.indexOf(carta.getAttribute('data-palo')) > -1) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                    break;
+
+                case '8':
+                    if (carta.getAttribute('data-numero') == '7' && palos_aceptados.indexOf(carta.getAttribute('data-palo')) > -1) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                    break;
+                case '7':
+                    if (carta.getAttribute('data-numero') == '6' && palos_aceptados.indexOf(carta.getAttribute('data-palo')) > -1) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                    break;
+                case '6':
+                    if (carta.getAttribute('data-numero') == '5' && palos_aceptados.indexOf(carta.getAttribute('data-palo')) > -1) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                    break;
+                case '5':
+                    if (carta.getAttribute('data-numero') == '4' && palos_aceptados.indexOf(carta.getAttribute('data-palo')) > -1) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                    break;
+                case '4':
+                    if (carta.getAttribute('data-numero') == '3' && palos_aceptados.indexOf(carta.getAttribute('data-palo')) > -1) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                    break;
+                case '3':
+                    if (carta.getAttribute('data-numero') == '2' && palos_aceptados.indexOf(carta.getAttribute('data-palo')) > -1) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                    break;
+                case '2':
+                    if (carta.getAttribute('data-numero') == 'as' && palos_aceptados.indexOf(carta.getAttribute('data-palo')) > -1) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                    break;
+                case 'as':
+                    return false;
+
+                default:
+                    return false;
+                    break;
+
+            }
+        }
+    }
+
+    function juego_terminado() {
+        var mensaje = confirm("Juego terminado en " + cont_movimientos.innerHTML + " movimientos y en tiempo: " + cont_tiempo.innerHTML);
+        if (mensaje) {
+            comenzar_juego();
+        } else {
+            alert("Game Over");
+        }
+    }
+</script>
+
+</body>
+
+</html>

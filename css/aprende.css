@@ -1,0 +1,11 @@
+
+.button_aprende{
+    color: #333 !important;
+    border-color: #333 !important;
+    text-decoration: none !important;
+}
+
+.button_aprende:hover{
+    background-color: #007bff !important;
+    color: white !important;
+}

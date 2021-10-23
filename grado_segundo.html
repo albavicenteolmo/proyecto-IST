@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"> 
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="css/menu_fijo.css"/>
+        <link rel="stylesheet" type="text/css" href="css/recursos.css"/>
+        <link rel="stylesheet" type="text/css" href="css/noticias.css"/>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+        <link rel="icon" href="imagenes/logos/teleco3.png">
+    </head>
+    <body>
+        <header>
+            <span id="site-name">
+                <img src="imagenes/logos/teleco2.png" width="63.24px" height="70px" style="margin-right: 20px">
+                Blog ETSIT UPV
+            </span>
+            <nav> <!-- Aqui estamos iniciando la nueva etiqueta nav -->
+                <ul class="nav">
+                    <li><a href="index.html">Noticias</a></li>
+                    <li><a href="">Recursos</a>
+                        <ul>
+                            <li><a href="">Grado</a>
+                                <ul>
+                                    <li><a href="grado_primero.html">Primero</a></li>
+                                    <li><a href="grado_segundo.html">Segundo</a></li>
+                                    <li><a href="grado_tercero.html">Tercero</a></li>
+                                    <li><a href="grado_cuarto.html">Cuarto</a></li>
+                                </ul>
+                            </li>   
+                            <li><a href="">Máster</a>
+                                <ul>
+                                    <li><a href="master_primero.html">Primero</a></li>
+                                    <li><a href="master_segundo.html">Segundo</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="biblioteca.html">Biblioteca</a></li>
+                    <li><a href="gimnasio.html">Gimnasio</a></li>
+                    <li><a href="empresa.html">Empresa</a></li>
+                    <li><a href="ocio.html">Ocio</a></li>
+                    <li><a href="aprende.html">Aprende</a></li>
+                </ul>
+            </nav><!-- Aqui estamos cerrando la nueva etiqueta nav -->
+        </header>
+        <div class="content">
+            <!-- <div class = "izquierda">
+                
+            </div> -->
+            <h1>Lista de Asignaturas</h1>
+            <div class="lista_asignaturas">
+                <ul>
+                    <li><button onclick="expandir('acustica')" class = "nivel1 btn btn-outline-secondary">Acústica</button>
+                        <ul style = "display: none"; id = "acustica">
+                            <li><button onclick="expandir('descr_acustica')" class = "nivel2 btn btn-outline-secondary">Descripción</button>
+                                <p class = "acustica p_asignatura" style = "display: none"; id = "descr_acustica">
+                                    Fundamentos de acústica: sonido, ecuación de onda, fenómenos de radiación, transmisión y recepción de ondas acústicas.<br>
+                                    Vibraciones mecánicas.<br>
+                                    Aplicaciones generales: ruido, acústica fisiológica, acústica de recintos.<br>
+                                </li>
+                            <li><button onclick="expandir('prof_acustica')" class = "nivel2 btn btn-outline-secondary">Profesores</button>
+                                <ul style = "display: none"; id = "prof_acustica" class = "acustica">
+                                    <li><a href="mailto:fcastells @ eln.upv.es>">Castells Ramón, Francisco Sales</a></li>
+                                    <li><a href="mailto:acebrian @ eln.upv.es>">Cebrián Ferriols, Antonio José</a></li>
+                                    <li><a href="mailto:jsdehesa @ upv.es>">Sánchez-Dehesa Moreno-Cid, José</a></li>
+                                </ul>
+                            </li>
+                            <li><button onclick="expandir('bib_acustica')" class = "nivel2 btn btn-outline-secondary">Bibliografía</button>
+                                <ul class = "acustica" style = "display: none"; id = "bib_acustica">
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990003949010203706&vid=bibupv">Ingeniería acústica : teoría y aplicaciones  (Möser, Michael | Barros, José Luis)</a></li>
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990001224210203706&vid=bibupv">Ingeniería acústica  (Recuero López, Manuel)</a></li>
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990000987770203706&vid=bibupv">Acoustics  (Beranek, Leo Leroy | Acoustical Society of America)</a></li>
+                                </ul>
+                            </li>
+                            <li><button onclick="expandir('ap_acustica')" class = "nivel2 btn btn-outline-secondary">Apuntes</button>
+                                <ul style = "display: none"; id = "ap_acustica" class = "acustica">
+                                    
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><button onclick="expandir('ATELEM')" class = "nivel1 btn btn-outline-secondary">Arquitecturas Telemáticas</button>
+                        <ul style = "display: none"; id="ATELEM">
+                            <li><button onclick="expandir('descr_ATELEM')" class = "nivel2 btn btn-outline-secondary">Descripción</button>
+                                <p class = "ATELEM p_asignatura" style = "display: none"; id = "descr_ATELEM">
+                                    Las redes de conmutación de paquetes y su arquitectura constituyen el eje temático de esta asignatura: los conceptos de fundamentales, los principales problemas y soluciones, los servicios extremo a extremo de las redes de datos, así como la utilización eficiente por parte de los equipos terminales son objetivos de estudio. <br>
+                                    Para abordar estos objetivos, se estudia la red Internet como la red transporte de datos de mayor penetración socio-económica actual y futura; describiendo conceptos, sistemas que la constituyen y protocolos que operan, poniendo énfasis en los que corresponden al transporte de datos extremo a extremo, y que dan nombre a la arquitectura que sustenta dicha red: TCP/IP.
+                                </li>
+                            <li><button onclick="expandir('prof_ATELEM')" class = "nivel2 btn btn-outline-secondary">Profesores</button>
+                                <ul style = "display: none"; id = "prof_ATELEM" class = "ATELEM">
+                                    <li><a href="mailto:evanda @ upvnet.upv.es>">Antonino Daviu, Eva</a></li>
+                                    <li><a href="mailto:pbeneit @ dcom.upv.es>">Beneit Mayordomo, Pablo Alberto</a></li>
+                                    <li><a href="mailto:oromero @ dcom.upv.es>">Romero Martínez, José Oscar</a></li>
+                                </ul>
+                            </li>
+                            <li><button onclick="expandir('bib_ATELEM')" class = "nivel2 btn btn-outline-secondary">Bibliografía</button>
+                                <ul style = "display: none"; id = "bib_ATELEM" class = "ATELEM">
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990001934850203706&vid=bibupv">Computer networking : a top-down approach featuring the internet  (Kurose, James F | Ross, Keith W)</a></li>
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990002425000203706&vid=bibupv">The TCP/IP guide : a comprehensive, illustrated internet protocols reference  (Kozierok, Charles M)</a></li>
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990004809900203706&vid=bibupv">Data and computer communications  (Stallings, William)</a></li>
+                                </ul>
+                            </li>
+                            <li><button onclick="expandir('ap_ATELEM')" class = "nivel2 btn btn-outline-secondary">Apuntes</li></button>
+                        </ul>
+                    </li>
+                    <li><button onclick="expandir('CELEC')" class = "nivel1 btn btn-outline-secondary">Circuitos Electrónicos</button>
+                        <ul style = "display: none"; id="CELEC">
+                            <li><button onclick="expandir('descr_CELEC')" class = "nivel2 btn btn-outline-secondary">Descripción</button>
+                                <p class = "CELEC p_asignatura" style = "display: none"; id = "descr_CELEC">El programa se ha diseñado con el objetivo de que los alumnos consigan comprender y dominar los conceptos básicos sobre las leyes generales de la mecánica, termodinámica, campos y ondas y electromagnetismo y su aplicación para la resolución de problemas propios de la ingeniería, para lo cual se han estructurado los contenidos en cuatro bloques que complementan los contenidos impartidos en Física I:<br>
+
+                                    1. CORRIENTE CONTÍNUA<br>
+                                    2. MAGNETOSTÁTICA<br>
+                                    3. MATERIALES MAGNÉTICOS<br>
+                                    4. ELECTRODINÁMICA<br>
+                                    5. ONDAS<br>
+                                    
+                                    Los contenidos de cada bloque se han planteado de forma que sean la base teórica que permita trabajar aplicaciones concretas de la Ingeniería de Telecomunicación.
+                                </li>
+                            <li><button onclick="expandir('prof_CELEC')" class = "nivel2 btn btn-outline-secondary">Profesores</button>
+                                <ul style = "display: none"; id = "prof_CELEC" class = "CELEC">
+                                    <li><a href="mailto:sercasib @ upvnet.upv.es>">Castiñeira Ibáñez, Sergio</a></li>
+                                    <li><a href="mailto:rsanchez @ fis.upv.es>">Sánchez Grandía, Rafael</a></li>
+                                    <li><a href="mailto:fcervera @ fis.upv.es>">Cervera Moreno, Francisco Salvador</a></li>
+                                </ul>
+                            </li>
+                            <li><button onclick="expandir('bib_CELEC')" class = "nivel2 btn btn-outline-secondary">Bibliografía</button>
+                                <ul style = "display: none"; id = "bib_CELEC" class = "CELEC">
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990001065190203706&vid=bibupv">Electromagnetismo y semiconductores : Curso de física aplicada  (Llinares Galiana, Jaime | Page, A | Universidad Politécnica de Valencia Departamento de Física Aplicada)</a></li>
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990001590600203706&vid=bibupv">Laboratorio de física  (Belmar, Francisco | Bonet, Elvira | Estellés Berenguer, Hermelando | Candelas, Pilar | Cervera, Francisco | Uris, Antonio | Page del Pozo, Álvaro Felipe)</a></li>
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990004033950203706&vid=bibupv">Física para la ciencia y la tecnología. Volumen 2, Electricidad y magnetismo, luz  (Tipler, Paul Allen | Mosca, Gene)</a></li>
+                                </ul>
+                            </li>
+                            <li><button onclick="expandir('ap_CELEC')" class = "nivel2 btn btn-outline-secondary">Apuntes</li></button>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- <div class = "derecha">
+                Derecha
+            </div> -->
+        </div>
+        <!-- FOOTER -->
+        <footer class="container">
+            <p class="float-right"><a href="#">Back to top</a></p>
+            <p class="float-left">&copy; 2019-2020 serrano-vicente-rubio-molina &middot; IST &middot; <a href="https://www.upv.es">UPV</a></p>
+        </footer>
+        <script>
+            function expandir(identificador){
+                var elem = document.getElementById(identificador);
+                console.log(elem);
+                if (elem.style.display === "none") {
+                    console.log("1");
+                    elem.style.display = "block";
+                } else {
+                    console.log("2");
+                    elem.style.display = "none";
+                    // Tenemos que esconder también todo el contenido de los apartados interiores
+                    var elem_clases = document.getElementsByClassName(identificador);
+                    for (let i of elem_clases){
+                        i.style.display = "none";
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

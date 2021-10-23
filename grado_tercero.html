@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"> 
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="css/menu_fijo.css"/>
+        <link rel="stylesheet" type="text/css" href="css/recursos.css"/>
+        <link rel="stylesheet" type="text/css" href="css/noticias.css"/>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+        <link rel="icon" href="imagenes/logos/teleco3.png">
+    </head>
+    <body>
+        <header>
+            <span id="site-name">
+                <img src="imagenes/logos/teleco2.png" width="63.24px" height="70px" style="margin-right: 20px">
+                Blog ETSIT UPV
+            </span>
+            <nav> <!-- Aqui estamos iniciando la nueva etiqueta nav -->
+                <ul class="nav">
+                    <li><a href="index.html">Noticias</a></li>
+                    <li><a href="">Recursos</a>
+                        <ul>
+                            <li><a href="">Grado</a>
+                                <ul>
+                                    <li><a href="grado_primero.html">Primero</a></li>
+                                    <li><a href="grado_segundo.html">Segundo</a></li>
+                                    <li><a href="grado_tercero.html">Tercero</a></li>
+                                    <li><a href="grado_cuarto.html">Cuarto</a></li>
+                                </ul>
+                            </li>   
+                            <li><a href="">Máster</a>
+                                <ul>
+                                    <li><a href="master_primero.html">Primero</a></li>
+                                    <li><a href="master_segundo.html">Segundo</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="biblioteca.html">Biblioteca</a></li>
+                    <li><a href="gimnasio.html">Gimnasio</a></li>
+                    <li><a href="empresa.html">Empresa</a></li>
+                    <li><a href="ocio.html">Ocio</a></li>
+                    <li><a href="aprende.html">Aprende</a></li>
+                </ul>
+            </nav><!-- Aqui estamos cerrando la nueva etiqueta nav -->
+        </header>
+        <div class="content">
+            <h1>Lista de Asignaturas</h1>
+            <div class="lista_asignaturas">
+                <ul>
+                    <li><button onclick="expandir('APTELEM')" class = "nivel1 btn btn-outline-secondary">Aplicaciones telemáticas</button>
+                        <ul style = "display: none"; id = "APTELEM">
+                            <li><button onclick="expandir('descr_APTELEM')" class = "nivel2 btn btn-outline-secondary">Descripción</button>
+                                <p class = "APTELEM p_asignatura" style = "display: none"; id = "descr_APTELEM">
+                                    El objetivo de esta asignatura se centra en el aprendizaje por parte del alumno de las técnicas básicas, lenguajes y herramientas de programación de algunas aplicaciones telemáticas en distintos contextos (lenguajes como Java o Python, algunos IDE, sistemas de control de versiones como Git,...), abarcando terrenos que van desde la Internet de las cosas (IoT -Internet of Things-), programación de aplicaciones para dispositivos móviles utilizando la geolocalización y visualización en mapas, multimedia, acceso a la nube, empleo de sockets, acceso a redes sociales, uso de servicios web, etc. Para ello, se emplearán entornos de programación que utilizarán plataformas que irán desde el clásico PC hasta pequeños dispositivos Arduino o sistemas de placa reducida (SBC), pasando por emuladores de dispositivos móviles o tablets basados en Android.
+                                </li>
+                            <li><button onclick="expandir('prof_APTELEM')" class = "nivel2 btn btn-outline-secondary">Profesores</button>
+                                <ul style = "display: none"; id = "prof_APTELEM" class = "APTELEM">
+                                    <li><a href="mailto:jelopez @ dcom.upv.es>">López Patiño, José Enrique</a></li>
+                                    <li><a href="mailto:fjmartin @ dcom.upv.es>">Martínez Zaldívar, Francisco José</a></li>
+                                </ul>
+                            </li>
+                            <li><button onclick="expandir('bib_APTELEM')" class = "nivel2 btn btn-outline-secondary">Bibliografía</button>
+                                <ul class = "APTELEM" style = "display: none"; id = "bib_APTELEM">
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,996901259003706&vid=bibupv">El gran libro de Android  (Tomás Gironés, Jesús)</a></li>
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990004102230203706&vid=bibupv">Hello, Android : introducing Google's mobile development platform  (Burnette, Ed)</a></li>
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990004143450203706&vid=bibupv">Beginning Android application development  (Lee, Wei Meng)</a></li>
+                                </ul>
+                            </li>
+                            <li><button onclick="expandir('ap_APTELEM')" class = "nivel2 btn btn-outline-secondary">Apuntes</button>
+                                <ul style = "display: none"; id = "ap_APTELEM" class = "APTELEM">
+                                   
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><button onclick="expandir('COMMULTI')" class = "nivel1 btn btn-outline-secondary">Comunicaciones Multimedia</button>
+                        <ul style = "display: none"; id="COMMULTI">
+                            <li><button onclick="expandir('descr_COMMULTI')" class = "nivel2 btn btn-outline-secondary">Descripción</button>
+                                <p class = "COMMULTI p_asignatura" style = "display: none"; id = "descr_COMMULTI">
+                                    Los sistemas y redes multimedia permiten la distribución de contenidos de audio y vídeo a través de las redes de comunicaciones desde la generación de los mismos hasta los dispositivos finales. En esta asignatura se analizarán los requerimientos de las comunicaciones multimedia y repasarán los conceptos básicos de compresión y transporte. En concreto, para permitir el funcionamiento de toda la cadena (producción, transporte y reproducción) se estudiarán los codificadores y contenedores de audio y vídeo, así como los protocolos y conceptos relacionados con la transmisión multimedia en Internet (RTP/RTCP, SIP, SDP, MPEG-TS, HTTP Streaming, Sincronización...). Una parte importante de la asignatura se centrará en los principales mecanismos de Calidad de Servicio (QoS, Quality of Service) disponible en los dispositivos de interconexión (switch, router,..) así como en las arquitecturas básicas de QoS (IntServ, DiffServ, MPLS,...) y su gestión a través de protocolos como SNMP (Simple Network Management Protocol). Por otra parte, actualmente los contenidos audiovisuales se distribuyen por diferentes canales y se reproducen en muy diferentes tipos de terminales. En concreto el temario de la asignatura incluirá el concepto de las redes IPTV en el escenario actual de distribución de contenidos digitales, la descripción de los diferentes elementos de una red IPTV, así como aplicar los aspectos propios de las redes IP (protocolos, calidad de servicio, configuración descubrimiento de servicios, multicast) a las redes IPTV. También se estudiarán las ventajas e inconvenientes tecnológicos de los servicios OTT (Over The Top) sobre Internet como alternativa a las redes gestionadas IPTV.
+                                </li>
+                            <li><button onclick="expandir('prof_COMMULTI')" class = "nivel2 btn btn-outline-secondary">Profesores</button>
+                                <ul style = "display: none"; id = "prof_COMMULTI" class = "COMMULTI">
+                                    <li><a href="mailto:pbeneit @ dcom.upv.es>">Beneit Mayordomo, Pablo Alberto</a></li>
+                                    <li><a href="mailto:jcguerri @ dcom.upv.es>">Guerri Cebollada, Juan Carlos</a></li>
+                                    <li><a href="mailto:aleon @ upv.es>">León Fernández, Antonio</a></li>
+                                </ul>
+                            </li>
+                            <li><button onclick="expandir('bib_COMMULTI')" class = "nivel2 btn btn-outline-secondary">Bibliografía</button>
+                                <ul style = "display: none"; id = "bib_COMMULTI" class = "COMMULTI">
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990004714230203706&vid=bibupv">Producing streaming video for multiple screen delivery.  (Ozer, Jan)</a></li>
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990003402190203706&vid=bibupv">Multimedia over IP and wireless networks : compression, networking, and systems  (Chou, Philip A | Schaar, Mihaela van der)</a></li>
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990001937010203706&vid=bibupv">Fundamentals of multimedia  (Li, Ze-Nian | Drew, Mark S)</a></li>
+                                </ul>
+                            </li>
+                            <li><button onclick="expandir('ap_COMMULTI')" class = "nivel2 btn btn-outline-secondary">Apuntes</li></button>
+                        </ul>
+                    </li>
+                    <li><button onclick="expandir('COMOPTIC')" class = "nivel1 btn btn-outline-secondary">Comunicaciones Ópticas</button>
+                        <ul style = "display: none"; id="COMOPTIC">
+                            <li><button onclick="expandir('descr_COMOPTIC')" class = "nivel2 btn btn-outline-secondary">Descripción</button>
+                                <p class = "COMOPTIC p_asignatura" style = "display: none"; id = "descr_COMOPTIC">
+                                    En esta asignatura se profundiza en los conceptos fundamentales relacionados con los sistemas de comunicaciones por fibra óptica. Para ello, se estudia la propagación en fibras ópticas y los fenómenos de atenuación y dispersión en señales digitales y analógicas. También se dedica una parte al estudio de la generación de luz mediante dispositivos LEDS y láseres, así como a la recepción de la señal óptica en detectores y receptores para comunicaciones ópticas, profundizando en el cálculo del SNR en señales analógicas y del BER en señales digitales a partir de las diversas fuentes de ruido en estos sistemas. El temario se completa con el estudio teórico y práctico de otros dispositivos también fundamentales en los sistemas de comunicaciones ópticas como son los componentes ópticos pasivos incluyendo filtros basados en distintas tecnologías, los amplificadores ópticos y los moduladores electro-ópticos.
+                                </li>
+                            <li><button onclick="expandir('prof_COMOPTIC')" class = "nivel2 btn btn-outline-secondary">Profesores</button>
+                                <ul style = "display: none"; id = "prof_COMOPTIC" class = "COMOPTIC">
+                                    <li><a href="mailto:bortega @ dcom.upv.es>">Ortega Tamarit, Beatriz</a></li>
+                                    <li><a href="mailto:ssales @ dcom.upv.es>">Sales Maicas, Salvador</a></li>
+                                    <li><a href="mailto:fradafer @ ntc.upv.es>">Díaz Fernández, Francisco Javier</a></li>
+                                </ul>
+                            </li>
+                            <li><button onclick="expandir('bib_COMOPTIC')" class = "nivel2 btn btn-outline-secondary">Bibliografía</button>
+                                <ul style = "display: none"; id = "bib_COMOPTIC" class = "COMOPTIC">
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990001112630203706&vid=bibupv">Fundamentos de comunicaciones ópticas  (Capmany Francoy, José | Martí, Javier | Fraile-Peláez, F. Javier)</a></li>
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990001814130203706&vid=bibupv">Problemas de comunicaciones ópticas  (Ortega, Beatriz | Capmany Francoy, José | Pastor, Daniel | Sales, Salvador)</a></li>
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990001173020203706&vid=bibupv">Dispositivos de comunicaciones ópticas  (Capmany Francoy, José | Martí, Javier | Fraile-Peláez, F. Javier)</a></li>
+                                </ul>
+                            </li>
+                            <li><button onclick="expandir('ap_COMOPTIC')" class = "nivel2 btn btn-outline-secondary">Apuntes</li></button>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- FOOTER -->
+        <footer class="container">
+            <p class="float-right"><a href="#">Back to top</a></p>
+            <p class="float-left">&copy; 2019-2020 serrano-vicente-rubio-molina &middot; IST &middot; <a href="https://www.upv.es">UPV</a></p>
+        </footer>
+        <script>
+            function expandir(identificador){
+                var elem = document.getElementById(identificador);
+                console.log(elem);
+                if (elem.style.display === "none") {
+                    console.log("1");
+                    elem.style.display = "block";
+                } else {
+                    console.log("2");
+                    elem.style.display = "none";
+                    // Tenemos que esconder también todo el contenido de los apartados interiores
+                    var elem_clases = document.getElementsByClassName(identificador);
+                    for (let i of elem_clases){
+                        i.style.display = "none";
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

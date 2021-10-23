@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"> 
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="css/menu_fijo.css"/>
+        <link rel="stylesheet" type="text/css" href="css/recursos.css"/>
+        <link rel="stylesheet" type="text/css" href="css/noticias.css"/>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+        <link rel="icon" href="imagenes/logos/teleco3.png">
+    </head>
+    <body>
+        <header>
+            <span id="site-name">
+                <img src="imagenes/logos/teleco2.png" width="63.24px" height="70px" style="margin-right: 20px">
+                Blog ETSIT UPV
+            </span>
+            <nav> <!-- Aqui estamos iniciando la nueva etiqueta nav -->
+                <ul class="nav">
+                    <li><a href="index.html">Noticias</a></li>
+                    <li><a href="">Recursos</a>
+                        <ul>
+                            <li><a href="">Grado</a>
+                                <ul>
+                                    <li><a href="grado_primero.html">Primero</a></li>
+                                    <li><a href="grado_segundo.html">Segundo</a></li>
+                                    <li><a href="grado_tercero.html">Tercero</a></li>
+                                    <li><a href="grado_cuarto.html">Cuarto</a></li>
+                                </ul>
+                            </li>   
+                            <li><a href="">Máster</a>
+                                <ul>
+                                    <li><a href="master_primero.html">Primero</a></li>
+                                    <li><a href="master_segundo.html">Segundo</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="biblioteca.html">Biblioteca</a></li>
+                    <li><a href="gimnasio.html">Gimnasio</a></li>
+                    <li><a href="empresa.html">Empresa</a></li>
+                    <li><a href="ocio.html">Ocio</a></li>
+                    <li><a href="aprende.html">Aprende</a></li>
+                </ul>
+            </nav><!-- Aqui estamos cerrando la nueva etiqueta nav -->
+        </header>
+        <div class="content">
+            <!-- <div class = "izquierda">
+                
+            </div> -->
+            <h1>Lista de Asignaturas</h1>
+            <div class="lista_asignaturas">
+                <ul>
+                    <li><button onclick="expandir('DELEC')" class = "nivel1 btn btn-outline-secondary">Dispositivos Electrónicos</button>
+                        <ul style = "display: none"; id = "DELEC">
+                            <li><button onclick="expandir('descr_DELEC')" class = "nivel2 btn btn-outline-secondary">Descripción</button>
+                                <p class = "DELEC p_asignatura" style = "display: none"; id = "descr_DELEC">Esta es la primera asignatura de la titulación con contenido en tecnología electrónica. En ella se introducen los dispositivos electrónicos básicos: resistores, condensadores, inductores, diodos, transistores BJT, transistores de efecto de campo y dispositivos fotónicos.
+                                        Cada componente estudiado se introduce desde un punto de vista tecnológico, se explica su comportamiento, los principales parámetros del dispositivo real y sus aplicaciones. En la parte práctica de la asignatura se introduce el concepto de simulación de circuitos electrónicos, y se realizan prácticas de montajes reales con el objetivo de entrenar a los alumnos en el manejo de los instrumentos del laboratorio y en el montaje y diseño de circuitos reales.</p>
+                            </li>
+                            <li><button onclick="expandir('prof_DELEC')" class = "nivel2 btn btn-outline-secondary">Profesores</button>
+                                <ul style = "display: none"; id = "prof_DELEC" class = "DELEC">
+                                    <li><a href="mailto:mguisan @ eln.upv.es>">Guillem Sánchez, María Salud</a></li>
+                                    <li><a href="mailto:yojiji @ eln.upv.es>">Jiménez Jiménez, Yolanda</a></li>
+                                    <li><a href="mailto:allimas @ itaca.upv.es>">Liberos Mascarell, Alejandro</a></li>
+                                </ul>
+                            </li>
+                            <li><button onclick="expandir('bib_DELEC')" class = "nivel2 btn btn-outline-secondary">Bibliografía</button>
+                                <ul class = "DELEC" style = "display: none"; id = "bib_DELEC">
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,996955237703706&vid=bibupv">Electrónica : teoría de circuitos y dispositivos electrónicos  (Boylestad, Robert L | Nashelsky, Louis | Navarro Salas, Rodolfo | Rodríguez Ramírez, Francisco | Martínez García, Mauricio Alberto)</a></li>
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990000676700203706&vid=bibupv">Materiales y componentes electrónicos activos  (Álvarez Santos, Ramiro)</a></li>
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990000619860203706&vid=bibupv">Materiales y componentes electrónicos pasivos  (Álvarez Santos, Ramiro)</a></li>
+                                </ul>
+                            </li>
+                            <li><button onclick="expandir('ap_DELEC')" class = "nivel2 btn btn-outline-secondary">Apuntes</button>
+                                <ul style = "display: none"; id = "ap_DELEC" class = "DELEC">
+                                    <li><a href="recursos/apuntesBJT.pdf" target="_blank">Apuntes BJT</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><button onclick="expandir('FisicaI')" class = "nivel1 btn btn-outline-secondary">Física I</button>
+                        <ul style = "display: none"; id="FisicaI">
+                            <li><button onclick="expandir('descr_FisicaI')" class = "nivel2 btn btn-outline-secondary">Descripción</button>
+                                <p class = "FisicaI p_asignatura" style = "display: none"; id = "descr_FisicaI">El programa se ha diseñado con el objetivo de que los alumnos consigan comprender y dominar los conceptos básicos sobre las leyes generales de la mecánica, termodinámica, campos y ondas y electromagnetismo y su aplicación para la resolución de problemas propios de la ingeniería, para lo cual se han estructurado los contenidos en tres bloques, que se complementarán con los contenidos de la asignatura de Física II: <br>
+
+                                        1. MECÁNICA <br>
+                                        2. ELECTROSTÁTICA <br>
+                                        3. TERMODINÁMICA <br>
+                                        
+                                        Los contenidos de cada bloque se han planteado de forma que sean la base teórica que permita trabajar aplicaciones concretas de la Ingeniería de Telecomunicación.
+                                    </li>
+                            <li><button onclick="expandir('prof_FisicaI')" class = "nivel2 btn btn-outline-secondary">Profesores</button>
+                                <ul style = "display: none"; id = "prof_FisicaI" class = "FisicaI">
+                                    <li><a href="mailto:fbelmar @ fis.upv.es>">Belmar Ibáñez, Francisco</a></li>
+                                    <li><a href="mailto:pcandelas @ fis.upv.es>">Candelas Valiente, Pilar</a></li>
+                                    <li><a href="mailto:fcervera @ fis.upv.es>">Cervera Moreno, Francisco Salvador</a></li>
+                                </ul>
+                            </li>
+                            <li><button onclick="expandir('bib_FisicaI')" class = "nivel2 btn btn-outline-secondary">Bibliografía</button>
+                                <ul style = "display: none"; id = "bib_FisicaI" class = "FisicaI">
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990001065190203706&vid=bibupv">Electromagnetismo y semiconductores : Curso de física aplicada  (Llinares Galiana, Jaime | Page, A | Universidad Politécnica de Valencia Departamento de Física Aplicada)</a></li>
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990004072820203706&vid=bibupv">Física para la ciencia y la tecnología. Volumen 1B, Oscilaciones y ondas  (Tipler, Paul Allen | Mosca, Gene)</a></li>
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990001590600203706&vid=bibupv">Laboratorio de física  (Belmar, Francisco | Bonet, Elvira | Estellés Berenguer, Hermelando | Candelas, Pilar | Cervera, Francisco | Uris, Antonio | Page del Pozo, Álvaro Felipe)</a></li>
+                                </ul>
+                            </li>
+                            <li><button onclick="expandir('ap_FisicaI')" class = "nivel2 btn btn-outline-secondary">Apuntes</button>
+                                <iframe style = "display: none"; id = "ap_FisicaI" class = "FisicaI p_asignatura" width="200px" height="300px" src="https://www.youtube.com/embed/8xHoDd_AfaA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </li>   
+                        </ul>
+                    </li>
+                    <li><button onclick="expandir('FisicaII')" class = "nivel1 btn btn-outline-secondary">Física II</button>
+                        <ul style = "display: none"; id="FisicaII">
+                            <li><button onclick="expandir('descr_FisicaII')" class = "nivel2 btn btn-outline-secondary">Descripción</button>
+                                <p class = "FisicaII p_asignatura" style = "display: none"; id = "descr_FisicaII">El programa se ha diseñado con el objetivo de que los alumnos consigan comprender y dominar los conceptos básicos sobre las leyes generales de la mecánica, termodinámica, campos y ondas y electromagnetismo y su aplicación para la resolución de problemas propios de la ingeniería, para lo cual se han estructurado los contenidos en cuatro bloques que complementan los contenidos impartidos en Física I:<br>
+
+                                    1. CORRIENTE CONTÍNUA<br>
+                                    2. MAGNETOSTÁTICA<br>
+                                    3. MATERIALES MAGNÉTICOS<br>
+                                    4. ELECTRODINÁMICA<br>
+                                    5. ONDAS<br>
+                                    
+                                    Los contenidos de cada bloque se han planteado de forma que sean la base teórica que permita trabajar aplicaciones concretas de la Ingeniería de Telecomunicación.
+                                </li>
+                            <li><button onclick="expandir('prof_FisicaII')" class = "nivel2 btn btn-outline-secondary">Profesores</button>
+                                <ul style = "display: none"; id = "prof_FisicaII" class = "FisicaII">
+                                    <li><a href="mailto:sercasib @ upvnet.upv.es>">Castiñeira Ibáñez, Sergio</a></li>
+                                    <li><a href="mailto:rsanchez @ fis.upv.es>">Sánchez Grandía, Rafael</a></li>
+                                    <li><a href="mailto:fcervera @ fis.upv.es>">Cervera Moreno, Francisco Salvador</a></li>
+                                </ul>
+                            </li>
+                            <li><button onclick="expandir('bib_FisicaII')" class = "nivel2 btn btn-outline-secondary">Bibliografía</button>
+                                <ul style = "display: none"; id = "bib_FisicaII" class = "FisicaII">
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990001065190203706&vid=bibupv">Electromagnetismo y semiconductores : Curso de física aplicada  (Llinares Galiana, Jaime | Page, A | Universidad Politécnica de Valencia Departamento de Física Aplicada)</a></li>
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990001590600203706&vid=bibupv">Laboratorio de física  (Belmar, Francisco | Bonet, Elvira | Estellés Berenguer, Hermelando | Candelas, Pilar | Cervera, Francisco | Uris, Antonio | Page del Pozo, Álvaro Felipe)</a></li>
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990004033950203706&vid=bibupv">Física para la ciencia y la tecnología. Volumen 2, Electricidad y magnetismo, luz  (Tipler, Paul Allen | Mosca, Gene)</a></li>
+                                </ul>
+                            </li>
+                            <li><button onclick="expandir('ap_FisicaII')" class = "nivel2 btn btn-outline-secondary">Apuntes</li></button>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- <div class = "derecha">
+                Derecha
+            </div> -->
+        </div>
+            <!-- FOOTER -->
+        <footer class="container">
+            <p class="float-right"><a href="#">Back to top</a></p>
+            <p class="float-left">&copy; 2019-2020 serrano-vicente-rubio-molina &middot; IST &middot; <a href="https://www.upv.es">UPV</a></p>
+        </footer>
+        <script>
+            function expandir(identificador){
+                var elem = document.getElementById(identificador);
+                console.log(elem);
+                if (elem.style.display === "none") {
+                    console.log("1");
+                    elem.style.display = "block";
+                } else {
+                    console.log("2");
+                    elem.style.display = "none";
+                    // Tenemos que esconder también todo el contenido de los apartados interiores
+                    var elem_clases = document.getElementsByClassName(identificador);
+                    for (let i of elem_clases){
+                        i.style.display = "none";
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"> 
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="css/menu_fijo.css"/>
+        <link rel="stylesheet" type="text/css" href="css/recursos.css"/>
+        <link rel="stylesheet" type="text/css" href="css/noticias.css"/>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+        <link rel="icon" href="imagenes/logos/teleco3.png">
+    </head>
+    <body>
+        <header>
+            <span id="site-name">
+                <img src="imagenes/logos/teleco2.png" width="63.24px" height="70px" style="margin-right: 20px">
+                Blog ETSIT UPV
+            </span>
+            <nav> <!-- Aqui estamos iniciando la nueva etiqueta nav -->
+                <ul class="nav">
+                    <li><a href="index.html">Noticias</a></li>
+                    <li><a href="">Recursos</a>
+                        <ul>
+                            <li><a href="">Grado</a>
+                                <ul>
+                                    <li><a href="grado_primero.html">Primero</a></li>
+                                    <li><a href="grado_segundo.html">Segundo</a></li>
+                                    <li><a href="grado_tercero.html">Tercero</a></li>
+                                    <li><a href="grado_cuarto.html">Cuarto</a></li>
+                                </ul>
+                            </li>   
+                            <li><a href="">Máster</a>
+                                <ul>
+                                    <li><a href="master_primero.html">Primero</a></li>
+                                    <li><a href="master_segundo.html">Segundo</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="biblioteca.html">Biblioteca</a></li>
+                    <li><a href="gimnasio.html">Gimnasio</a></li>
+                    <li><a href="empresa.html">Empresa</a></li>
+                    <li><a href="ocio.html">Ocio</a></li>
+                    <li><a href="aprende.html">Aprende</a></li>
+                </ul>
+            </nav><!-- Aqui estamos cerrando la nueva etiqueta nav -->
+        </header>
+        <div class="content">
+            <!-- <div class = "izquierda">
+                
+            </div> -->
+            <h1>Lista de Asignaturas</h1>
+            <div class="lista_asignaturas">
+                <ul>
+                    <li><button onclick="expandir('IST')" class = "nivel1 btn btn-outline-secondary">Integración de servicios telemáticos</button>
+                        <ul style = "display: none"; id = "IST">
+                            <li><button onclick="expandir('descr_IST')" class = "nivel2 btn btn-outline-secondary">Descripción</button>
+                                <p class = "IST p_asignatura" style = "display: none"; id = "descr_IST">En esta asignatura se pretende proporcionar el conocimiento y fomentar la habilidad suficiente para integrar servicios telemáticos existentes. Comenzaremos por estudiar HTML5 junto con CSS3 y JavaScript; continuaremos repasando los formatos XML y JSON, profundizando en los servicios web. Con las herramientas estudiadas, se analizarán ejemplos de integración. Para finalizar se aprenderá a programar servicios en el lado de servidor introduciendo la herramineta Node.js.
+                                </li>
+                            <li><button onclick="expandir('prof_IST')" class = "nivel2 btn btn-outline-secondary">Profesores</button>
+                                <ul style = "display: none"; id = "prof_IST" class = "IST">
+                                    <li><a href="mailto:fjmartin @ dcom.upv.es>">Martínez Zaldívar, Francisco José</a></li>
+                                    <li><a href="mailto:isdefez @ iteam.upv.es>">De Fez Lava, Ismael</a></li>
+                                    <li><a href="mailto:mgvalls @ dcom.upv.es>">García Valls, María Soledad</a></li>
+                                </ul>
+                            </li>
+                            <li><button onclick="expandir('bib_IST')" class = "nivel2 btn btn-outline-secondary">Bibliografía</button>
+                                <ul class = "IST" style = "display: none"; id = "bib_IST">
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990005242110203706&vid=bibupv">HTML5, CSS3 y JavaScript  (Meloni, Julie C)</a></li>
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990004775110203706&vid=bibupv">Getting started with WebRTC : explore WebRTC for real-time peer-to-peer communication.  (Manson, Rob)</a></li>
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990003731360203706&vid=bibupv">RESTful web services  (Richardson, Leonard | Ruby, Sam)</a></li>
+                                </ul>
+                            </li>
+                            <li><button onclick="expandir('ap_IST')" class = "nivel2 btn btn-outline-secondary">Apuntes</button>
+                                <ul style = "display: none"; id = "ap_IST" class = "IST">
+                                    
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><button onclick="expandir('PSCA')" class = "nivel1 btn btn-outline-secondary">Procesamiento de señal en sistemas de comunicaciones y audiovisuales</button>
+                        <ul style = "display: none"; id="PSCA">
+                            <li><button onclick="expandir('descr_PSCA')" class = "nivel2 btn btn-outline-secondary">Descripción</button>
+                                <p class = "PSCA p_asignatura" style = "display: none"; id = "descr_PSCA">
+                                    El temario de la asignatura tendrá los contenidos necesarios para que el alumno adquiera las siguientes competencias:<br>
+
+                                    - Capacidad para aplicar métodos de la teoría de la información, la modulación adaptativa y codificación de canal, así como técnicas avanzadas de procesado digital de señal a los sistemas de comunicaciones y audiovisuales.<br>
+                                    
+                                    - Capacidad para diseñar y dimensionar redes de transporte, difusión y distribución de señales multimedia.</li>
+                            <li><button onclick="expandir('prof_PSCA')" class = "nivel2 btn btn-outline-secondary">Profesores</button>
+                                <ul style = "display: none"; id = "prof_PSCA" class = "PSCA">
+                                    <li><a href="mailto:pescalle @ upvnet.upv.es>">Escalle García, Pablo</a></li>
+                                    <li><a href="mailto:agonzal @ dcom.upv.es>">González Salvador, Alberto</a></li>
+                                    <li><a href="mailto:jmmossi @ dcom.upv.es>">Mossi García, José Manuel</a></li>
+                                </ul>
+                            </li>
+                            <li><button onclick="expandir('bib_PSCA')" class = "nivel2 btn btn-outline-secondary">Bibliografía</button>
+                                <ul style = "display: none"; id = "bib_PSCA" class = "PSCA">
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990001146290203706&vid=bibupv">Sistemas de televisión  (Mossi García, José Manuel | Naranjo Ornedo, Valery | Igual García, Jorge | Universidad Politécnica de Valencia)</a></li>
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990000878360203706&vid=bibupv">JPEG still image data comprenssion standard  (Pennebaker, William B | Mitchell, Joan L)</a></li>
+                                </ul>
+                            </li>
+                            <li><button onclick="expandir('ap_PSCA')" class = "nivel2 btn btn-outline-secondary">Apuntes</li></button>
+                        </ul>
+                    </li>
+                    <li><button onclick="expandir('TIE')" class = "nivel1 btn btn-outline-secondary">Transductores e Instrumentación Electrónica</button>
+                        <ul style = "display: none"; id="TIE">
+                            <li><button onclick="expandir('descr_TIE')" class = "nivel2 btn btn-outline-secondary">Descripción</button>
+                                <p class = "TIE p_asignatura" style = "display: none"; id = "descr_TIE">Los sensores son los dispositivos que unen el mundo de la electrónica con el mundo real. Cuando queramos obtener información de alguna magnitud física del mundo real; presión, fuerza, aceleración, temperatura, etc., deberemos utilizar un sensor, cuya información será procesada, ya sea por un circuito analógico o digital. Este sensor tendrá unas determinadas características que condicionará la utilización del sensor para un determinado rango de medida, y con un determinado ritmo de variación (respuesta en frecuencia). E incluso en ese rango de medida, se cometerá un error o distorsión de la realidad debido a la propia linealidad del sensor, histéresis, etc. En esta asignatura se van a estudiar los diferentes sensores de que se dispone, en función de la magnitud a medir: presión, fuerza, par, desplazamiento, velocidad, aceleración, masa, temperatura, etc. Para ello, se dispondrá de sensores de tipo; capacitivo, inductivo, de efecto Hall, resistivos, ópticos, etc. Y se estudiará su principio físico de funcionamiento, y sus características; respuesta en frecuencia, rango de medida, linealidad, histéresis, etc., así como los acondicionadores de señal apropiados para cada sensor. Así mismo, el alumno aprenderá a determinar el margen de incertidumbre en las medidas.
+                                </li>
+                            <li><button onclick="expandir('prof_TIE')" class = "nivel2 btn btn-outline-secondary">Profesores</button>
+                                <ul style = "display: none"; id = "prof_TIE" class = "TIE">
+                                    <li><a href="mailto:sercasib @ upvnet.upv.es>">Castiñeira Ibáñez, Sergio</a></li>
+                                    <li><a href="mailto:rsanchez @ fis.upv.es>">Sánchez Grandía, Rafael</a></li>
+                                    <li><a href="mailto:fcervera @ fis.upv.es>">Cervera Moreno, Francisco Salvador</a></li>
+                                </ul>
+                            </li>
+                            <li><button onclick="expandir('bib_TIE')" class = "nivel2 btn btn-outline-secondary">Bibliografía</button>
+                                <ul style = "display: none"; id = "bib_TIE" class = "TIE">
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990001873000203706&vid=bibupv">Sensores y acondicionadores de señal  (Pallàs Areny, Ramón)</a></li>
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990001201360203706&vid=bibupv">Instrumentación aplicada a la ingeniería : transductores y medidas mecánicas  (Fraile Mora, Jesús | García Gutiérrez, Pedro | Universidad Politécnica de Madrid Escuela Técnica Superior de Ingenieros de Caminos, Canales y Puertos)</a></li>
+                                </ul>
+                            </li>
+                            <li><button onclick="expandir('ap_TIE')" class = "nivel2 btn btn-outline-secondary">Apuntes</li></button>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- <div class = "derecha">
+                Derecha
+            </div> -->
+        </div>
+
+        <script>
+            function expandir(identificador){
+                var elem = document.getElementById(identificador);
+                console.log(elem);
+                if (elem.style.display === "none") {
+                    console.log("1");
+                    elem.style.display = "block";
+                } else {
+                    console.log("2");
+                    elem.style.display = "none";
+                    // Tenemos que esconder también todo el contenido de los apartados interiores
+                    var elem_clases = document.getElementsByClassName(identificador);
+                    for (let i of elem_clases){
+                        i.style.display = "none";
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

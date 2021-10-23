@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"> 
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="css/menu_fijo.css"/>
+        <link rel="stylesheet" type="text/css" href="css/recursos.css"/>
+        <link rel="stylesheet" type="text/css" href="css/noticias.css"/>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+        <link rel="icon" href="imagenes/logos/teleco3.png">
+    </head>
+    <body>
+        <header>
+            <span id="site-name">
+                <img src="imagenes/logos/teleco2.png" width="63.24px" height="70px" style="margin-right: 20px">
+                Blog ETSIT UPV
+            </span>
+            <nav> <!-- Aqui estamos iniciando la nueva etiqueta nav -->
+                <ul class="nav">
+                    <li><a href="index.html">Noticias</a></li>
+                    <li><a href="">Recursos</a>
+                        <ul>
+                            <li><a href="">Grado</a>
+                                <ul>
+                                    <li><a href="grado_primero.html">Primero</a></li>
+                                    <li><a href="grado_segundo.html">Segundo</a></li>
+                                    <li><a href="grado_tercero.html">Tercero</a></li>
+                                    <li><a href="grado_cuarto.html">Cuarto</a></li>
+                                </ul>
+                            </li>   
+                            <li><a href="">Máster</a>
+                                <ul>
+                                    <li><a href="master_primero.html">Primero</a></li>
+                                    <li><a href="master_segundo.html">Segundo</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="biblioteca.html">Biblioteca</a></li>
+                    <li><a href="gimnasio.html">Gimnasio</a></li>
+                    <li><a href="empresa.html">Empresa</a></li>
+                    <li><a href="ocio.html">Ocio</a></li>
+                    <li><a href="aprende.html">Aprende</a></li>
+                </ul>
+            </nav><!-- Aqui estamos cerrando la nueva etiqueta nav -->
+        </header>
+        <div class="content">
+            <!-- <div class = "izquierda">
+                
+            </div> -->
+            <h1>Lista de Asignaturas</h1>
+            <div class="lista_asignaturas">
+                <ul>
+                    <li><button onclick="expandir('Antenas')" class = "nivel1 btn btn-outline-secondary">Antenas</button>
+                        <ul style = "display: none"; id = "Antenas">
+                            <li><button onclick="expandir('descr_Antenas')" class = "nivel2 btn btn-outline-secondary">Descripción</button>
+                                <p class = "Antenas p_asignatura" style = "display: none"; id = "descr_Antenas">
+                                    La asignatura aborda el análisis de antenas a partir de la solución de las ecuaciones de Maxwell para problemas de radiación. Inicialmente se trabaja sobre las expresiones que describen la radiación electromagnética en general. A partir de ahí se definen los parámetros que se utilizan habitualmente para describir las prestaciones de las antenas. A continuación se estudian antenas sencillas para conocer los mecanismos físicos de la radiación, se estudian las antenas de hilo, como dipolos y espiras, antenas de apertura, como ranuras, bocinas y reflectores y agrupaciones de antenas.
+                                </li>
+                            <li><button onclick="expandir('prof_Antenas')" class = "nivel2 btn btn-outline-secondary">Profesores</button>
+                                <ul style = "display: none"; id = "prof_Antenas" class = "Antenas">
+                                    <li><a href="mailto:hesteban @ upv.es>">Esteban González, Héctor</a></li>
+                                    <li><a href="mailto:avalero @ dcom.upv.es>">Valero Nogueira, Alejandro</a></li>
+                                </ul>
+                            </li>
+                            <li><button onclick="expandir('bib_Antenas')" class = "nivel2 btn btn-outline-secondary">Bibliografía</button>
+                                <ul class = "Antenas" style = "display: none"; id = "bib_Antenas">
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990001758060203706&vid=bibupv&lang=es_ES">Antenas (Cardama Aznar, Angel | Jofre Roca, Lluís | Rius Casals, Juan Manuel | Blanch Boris, Sebastián | Romeu Robert, Jordi | Ferrando Bataller, Miguel)</a></li>
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990001598780203706&vid=bibupv&lang=es_ES">Análisis y diseño de antenas [Recurso electrónico-CD-ROM] (Ferrando Bataller, Miguel | Valero Nogueira, Alejandro)</a></li>
+                                </ul>
+                            </li>
+                            <li><button onclick="expandir('ap_Antenas')" class = "nivel2 btn btn-outline-secondary">Apuntes</button>
+                                <ul style = "display: none"; id = "ap_Antenas" class = "Antenas">
+                                    
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><button onclick="expandir('DSE')" class = "nivel1 btn btn-outline-secondary">Desarrollo de Sistemas Electrónicos</button>
+                        <ul style = "display: none"; id="DSE">
+                            <li><button onclick="expandir('descr_DSE')" class = "nivel2 btn btn-outline-secondary">Descripción</button>
+                                <p class = "DSE p_asignatura" style = "display: none"; id = "descr_DSE">
+                                    La asignatura tiene como objetivo que el alumno adquiera las capacidades y habilidades necesarias para el diseño electrónico a nivel de sistema. Para ello se abarcan las distintas etapas de un proyecto real desde la especificación, particionado y selección de componentes hasta los aspectos de implementación física en tecnología de circuito electrónico impreso utilizando herramientas de diseño asistido por ordenador CAD profesionales.
+                                </li>
+                            <li><button onclick="expandir('prof_DSE')" class = "nivel2 btn btn-outline-secondary">Profesores</button>
+                                <ul style = "display: none"; id = "prof_DSE" class = "DSE">
+                                    <li><a href="mailto:josceiz @ eln.upv.es>">Celador Izquierdo, José Miguel</a></li>
+                                    <li><a href="mailto:malarrea @ eln.upv.es>">Larrea Torres, Miguel Ángel</a></li>
+                                </ul>
+                            </li>
+                            <li><button onclick="expandir('bib_DSE')" class = "nivel2 btn btn-outline-secondary">Bibliografía</button>
+                                <ul style = "display: none"; id = "bib_DSE" class = "DSE">
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990003749590203706&vid=bibupv">Complete PCB design using OrCAD capture and PCB editor  (Mitzner, Kraig)</a></li>
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,996912602903706&vid=bibupv">The circuit designer's companion  (Wilson, Peter)</a></li>
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990006869070203706&vid=bibupv">Printed circuits handbook  (Coombs, Clyde F | Holden, Happy T)</a></li>
+                                </ul>
+                            </li>
+                            <li><button onclick="expandir('ap_DSE')" class = "nivel2 btn btn-outline-secondary">Apuntes</li></button>
+                        </ul>
+                    </li>
+                    <li><button onclick="expandir('seguridad')" class = "nivel1 btn btn-outline-secondary">Seguridad</button>
+                        <ul style = "display: none"; id="seguridad">
+                            <li><button onclick="expandir('descr_seguridad')" class = "nivel2 btn btn-outline-secondary">Descripción</button>
+                                <p class = "seguridad p_asignatura" style = "display: none"; id = "descr_seguridad">En la actualidad los sistemas informáticos manejan cantidades ingentes de información con un alto valor para sus propietarios.
+                                    Estos sistemas almacenan dicha información, la procesan y la transmiten a través de las redes.
+                                    Cuanto mayor sea el valor de la información, más relevancia adquiere el hecho de preservar la misma, de forma que se garantice su confidencialidad, integridad y disponibilidad.
+                                    Por ello, se hace necesario aprender diversas medidas que garanticen estos tres pilares básicos de la seguridad.
+                                    El objetivo principal que se pretende alcanzar en esta asignatura es conseguir que el estudiante adquiera unos conocimientos básicos sobre las vulnerablidades y ataques existentes, así como de los medios necesarios para proteger de los mismos a cualquier sistema.
+                                </li>
+                            <li><button onclick="expandir('prof_seguridad')" class = "nivel2 btn btn-outline-secondary">Profesores</button>
+                                <ul style = "display: none"; id = "prof_seguridad" class = "seguridad">
+                                    <li><a href="mailto:mesteve @ dcom.upv.es>">Esteve Domingo, Manuel</a></li>
+                                    <li><a href="mailto:López Patiño, José Enrique>">López Patiño, José Enrique</a></li>
+                                </ul>
+                            </li>
+                            <li><button onclick="expandir('bib_seguridad')" class = "nivel2 btn btn-outline-secondary">Bibliografía</button>
+                                <ul style = "display: none"; id = "bib_seguridad" class = "seguridad">
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990003284840203706&vid=bibupv&lang=es_ES">Network security essentials : applications and standards (Stallings, William)</a></li>
+                                    <li><a target="_blank" href="https://polibuscador.upv.es/primo-explore/search?institution=UPV&query=any,contains,990006161730203706&vid=bibupv">Designing network security (Kaeo, Merike)</a></li>
+                                </ul>
+                            </li>
+                            <li><button onclick="expandir('ap_seguridad')" class = "nivel2 btn btn-outline-secondary">Apuntes</li></button>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- FOOTER -->
+        <footer class="container">
+            <p class="float-right"><a href="#">Back to top</a></p>
+            <p class="float-left">&copy; 2019-2020 serrano-vicente-rubio-molina &middot; IST &middot; <a href="https://www.upv.es">UPV</a></p>
+        </footer>
+
+        <script>
+            function expandir(identificador){
+                var elem = document.getElementById(identificador);
+                console.log(elem);
+                if (elem.style.display === "none") {
+                    console.log("1");
+                    elem.style.display = "block";
+                } else {
+                    console.log("2");
+                    elem.style.display = "none";
+                    // Tenemos que esconder también todo el contenido de los apartados interiores
+                    var elem_clases = document.getElementsByClassName(identificador);
+                    for (let i of elem_clases){
+                        i.style.display = "none";
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

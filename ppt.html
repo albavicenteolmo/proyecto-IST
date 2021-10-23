@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Piedra, papel o tijeras</title>
+    <link type="text/css" rel="stylesheet" href="css/ppt.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script src='/socket.io/socket.io.js'></script>
+
+    <script src="js/ppt.js"></script>
+
+</head>
+
+
+<h1>¡Piedra, papel o tijera!</h1>
+
+<div class="jugador contrario">
+
+    <div class="tercio">
+        <div class="imagenes">
+            <div class="par">
+                <img class="alegre" src="imagenes/iconos/alegre.png">
+                <img class="triste" src="imagenes/iconos/triste.png">
+            </div>
+        </div>
+    </div>
+
+    <div class="tercio">
+        <div class="imagenes">
+            <div class="par">
+                <img class="piedra" src="imagenes/iconos/piedra.png">
+                <img class="interrogante" src="imagenes/iconos/interrogante.png">
+            </div>
+            <div class="par">
+                <img class="papel" src="imagenes/iconos/papel.png">
+                <img class="interrogante" src="imagenes/iconos/interrogante.png">
+            </div>
+            <div class="par">
+                <img class="tijera" src="imagenes/iconos/tijera.png">
+                <img class="interrogante" src="imagenes/iconos/interrogante.png">
+            </div>
+        </div>
+    </div>
+
+    <div class="tercio">
+        <p id="contrario">Contrincante:<br>
+            <span id="nom_cont"> ? </span> (
+            <span id="puntos_contrario">0</span>)
+        </p>
+    </div>
+
+</div>
+
+
+<div class="jugador yo">
+
+    <div class="tercio">
+        <div class="imagenes">
+            <div class="par">
+                <img class="alegre" src="imagenes/iconos/alegre.png">
+                <img class="triste" src="imagenes/iconos/triste.png">
+            </div>
+        </div>
+    </div>
+
+    <div class="tercio">
+        <div class="imagenes">
+            <div class="par">
+                <img class="piedra" id="piedra" src="imagenes/iconos/piedra.png">
+            </div>
+            <div class="par">
+                <img class="papel" id="papel" src="imagenes/iconos/papel.png">
+            </div>
+            <div class="par">
+                <img class="tijera" id="tijera" src="imagenes/iconos/tijera.png">
+            </div>
+        </div>
+    </div>
+
+    <div class="tercio">
+        <p id="yo">Yo:<br>
+            <span id="mi_nombre">?</span> (
+            <span id="puntos_yo">0</span>)
+        </p>
+    </div>
+
+</div>
+
+
+<div style="height:100px;"><button id="otra_vez">Jugar otra vez</button></div>
+
+
+
+
+</body>
+
+</html>

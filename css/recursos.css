@@ -1,0 +1,84 @@
+
+.content{
+    text-align: center;
+    width: 100%;
+}
+
+.izquierda{
+    width: 20%;
+    float: left;
+    background-image: url(etsit.jpeg);
+}
+
+.lista_asignaturas{
+    margin: 20px;
+    width: 100%;
+    float: left;
+    align-self: center;
+    font-size: 0.8em;
+}
+
+.lista_asignaturas li{
+    list-style: none;
+}
+
+.lista_asignaturas a{
+    color: #007bff;
+}
+
+.lista_asignaturas a:hover{
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.derecha{
+    width:20%;
+    float: left;
+}
+
+.nivel1{
+    width: 50%;
+    height: 2*em;
+    padding: 5px;
+    margin: 5px;
+    color: #333 !important;
+    /* background-color: #007bff !important; */
+    /* border-color: #007bff !important; */
+}
+
+.nivel1:hover{
+    background-color: #007bff !important;
+    color: white !important;
+}
+
+.nivel2{
+    width: 25%;
+    color: #333 !important;
+    /* background-color: #007bff !important; */
+    margin: 2px;
+}
+
+.nivel2:hover{
+    color: white !important;
+    background-color: #007bff !important;
+}
+
+.p_asignatura {
+    text-align: justify;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.lista_asignaturas ul li ul li > *{
+    padding: 10px;
+
+}
+
+.busqueda{
+    margin: 30px;
+}
+
+
+
+
